@@ -8,7 +8,7 @@
 What it does:
  1. Logs in with your Hugging Face token (HF_TOKEN in .env, or `huggingface-cli login`).
  2. Creates the Space (Docker, public) if it doesn't exist.
- 3. Copies DEEPSEEK_API_KEY (and SUPABASE_* if set) from your .env into the
+ 3. Copies DEEPSEEK_API_KEY (and GEMINI_API_KEY / SUPABASE_* if set) from .env into the
     Space as *secrets* — so the key never goes into code or chat.
  4. Uploads only what the app needs. Never uploads .env, _local/ (answer key),
     .git, tests or docs. Uses the HF API, so PDFs/Word/Excel need no git-lfs.
@@ -98,6 +98,9 @@ def main():
         print("✓ DeepSeek key saved as a Space secret")
     else:
         print("! No DEEPSEEK_API_KEY in .env — the app will run on rules only (you can add it later in Space settings)")
+    if os.environ.get("GEMINI_API_KEY"):
+        api.add_space_secret(repo_id, "GEMINI_API_KEY", os.environ["GEMINI_API_KEY"])
+        print("✓ Gemini key saved as a Space secret (reads scanned PDFs)")
     for k in ("SUPABASE_URL", "SUPABASE_KEY"):
         if os.environ.get(k):
             api.add_space_secret(repo_id, k, os.environ[k])

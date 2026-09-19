@@ -212,3 +212,35 @@ def test_deepseek_request_shape(monkeypatch, tmp_path):
     assert "json" in sent["body"]["messages"][0]["content"].lower()   # DeepSeek JSON mode requires it
     assert not mod.can_read_pdf()                                        # scans → a person
     importlib.reload(llm)
+
+
+def test_scans_go_to_gemini_even_when_deepseek_is_main(monkeypatch, tmp_path):
+    import importlib
+    monkeypatch.undo()
+    monkeypatch.setenv("LLM_PROVIDER", "deepseek")
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "ds-key")
+    monkeypatch.setenv("GEMINI_API_KEY", "gm-key")
+    monkeypatch.setenv("LLM_CACHE_DIR", str(tmp_path))
+    mod = importlib.reload(llm)
+    urls = []
+
+    class Resp:
+        status_code = 200
+        def __init__(self, url): self.url = url
+        def raise_for_status(self): pass
+        def json(self):
+            if "googleapis" in self.url:
+                return {"candidates": [{"content": {"parts": [{"text": '{"doc_type": "BL", "fields": {}, "readable": true}'}]}}]}
+            return {"choices": [{"message": {"content": '{"category": "SPAM"}'}}]}
+
+    def fake_post(url, headers, json, timeout):
+        urls.append(url)
+        return Resp(url)
+
+    monkeypatch.setattr(mod.requests, "post", fake_post)
+    monkeypatch.setattr(mod, "MIN_INTERVAL", 0)
+    assert mod.provider() == "deepseek" and mod.can_read_pdf()
+    mod.extract_fields(None, pdf_bytes=b"%PDF scan")                      # scan → Gemini
+    mod.classify_email({"from": "a", "subject": "b", "body": "c"}, {"SPAM": "x"})  # text → DeepSeek
+    assert "googleapis.com" in urls[0] and urls[1] == "https://api.deepseek.com/chat/completions"
+    importlib.reload(llm)

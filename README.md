@@ -51,7 +51,7 @@ Email ─► ① Sort ──────────────► not a BL che
              (rules → AI if unsure)
          │ BL check
          ▼
-        ② Read attachments ──► txt / PDF / Word / Excel parsed; scans → a person
+        ② Read attachments ──► txt / PDF / Word / Excel parsed; scans → Gemini vision → a person confirms
          ▼
         ③ Find the 7 fields ──► label synonyms (EN / 中文 / BM / ID) → AI for unknown labels
          ▼
@@ -63,7 +63,7 @@ Email ─► ① Sort ──────────────► not a BL che
 ```
 
 **Why this design**
-- **Rules first, AI where it helps.** Rules are instant, free and explainable. The AI (DeepSeek) handles emails in new wording or other languages, and labels we've never seen. Scanned image PDFs go to a person (optional: switch to Gemini, which can read them). Every email records `decided_by: rule | llm`.
+- **Rules first, AI where it helps.** Rules are instant, free and explainable. The AI (DeepSeek) handles emails in new wording or other languages, and labels we've never seen. Scanned image PDFs are read by Gemini's free vision model (if its key is set) and then confirmed by a person. Every email records `decided_by: rule | llm`.
 - **The AI reads; code compares.** Comparing `21,577` with `21,757`, or `CO., LTD` with `CO LTD`, is maths, not judgement. Code gives the same answer every time and has unit tests.
 - **Never guess.** A blank field or an unreadable scan is *not* a mismatch. It goes to a person with the reason.
 - **Evidence for every value.** Click any row to see the exact text it came from in each document.
@@ -76,9 +76,9 @@ Email ─► ① Sort ──────────────► not a BL che
 |---|---|
 | Backend / pipeline | Python 3.12, FastAPI, pypdf, python-docx, openpyxl |
 | Dashboard | Plain HTML/CSS/JS served by FastAPI (no build step) |
-| AI | **DeepSeek API** (`deepseek-chat`), called only when rules aren't sure. Swappable for free Gemini / Groq / Ollama via `.env` |
+| AI | **DeepSeek API** (`deepseek-chat`) when rules aren't sure · **Gemini free tier** reads scanned PDFs · both optional, set in `.env` |
 | Cloud | Hugging Face Spaces (Docker) + Supabase free Postgres for reviews and uploads, all free tiers |
-| Tests | pytest (36 tests) |
+| Tests | pytest (37 tests) |
 
 ---
 
@@ -120,7 +120,7 @@ python3 scripts/score.py              # organisers' scorer (needs _local/scoring
 │   └── api.py         FastAPI endpoints + serves the dashboard
 ├── src/static/        dashboard (index.html, app.js, style.css)
 ├── scripts/           run_batch.py, score.py
-├── tests/             36 tests on unseen wording, layouts and languages
+├── tests/             37 tests on unseen wording, layouts and languages
 ├── data/              organisers' synthetic dataset + results.json
 └── docs/              brief, rules, decisions, deploy guide
 ```

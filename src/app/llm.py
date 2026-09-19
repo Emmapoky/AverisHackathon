@@ -2,7 +2,8 @@
 fractions of a cent per call). Picked by env vars:
 
   LLM_PROVIDER=deepseek DEEPSEEK_API_KEY=...  (DEEPSEEK_MODEL=deepseek-chat)
-                        Text only — scanned PDFs are escalated to a person.
+                        Text only. If GEMINI_API_KEY is also set, Gemini's free
+                        tier reads scanned PDFs (vision) — DeepSeek does the rest.
   LLM_PROVIDER=gemini   GEMINI_API_KEY=...   (Google AI Studio free key, no card)
                         GEMINI_MODEL=gemini-2.5-flash   (reads scanned PDFs too)
   LLM_PROVIDER=openai_compat  LLM_BASE_URL=https://api.groq.com/openai/v1
@@ -46,7 +47,10 @@ def provider() -> str | None:
         return "gemini"
     if p == "openai_compat" and os.environ.get("LLM_BASE_URL"):
         return "openai_compat"
-    if not p and os.environ.get("GEMINI_API_KEY"):
+    # Asked-for provider has no key? Use whichever key we do have.
+    if os.environ.get("DEEPSEEK_API_KEY"):
+        return "deepseek"
+    if os.environ.get("GEMINI_API_KEY"):
         return "gemini"
     return None
 
@@ -56,14 +60,19 @@ def available() -> bool:
 
 
 def can_read_pdf() -> bool:
-    return provider() == "gemini"
+    """Scanned PDFs need a vision model: Gemini, used whenever its key is set."""
+    return bool(os.environ.get("GEMINI_API_KEY"))
+
+
+def gemini_model() -> str:
+    return os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 
 def model_name() -> str:
     if provider() == "deepseek":
         return os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
     if provider() == "gemini":
-        return os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+        return gemini_model()
     return os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile")
 
 
@@ -102,7 +111,7 @@ def _call_gemini(prompt: str, pdf_bytes: bytes | None) -> str:
     if pdf_bytes:
         parts.append({"inline_data": {"mime_type": "application/pdf",
                                       "data": base64.b64encode(pdf_bytes).decode()}})
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name()}:generateContent"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{gemini_model()}:generateContent"
     r = requests.post(url, headers={"x-goog-api-key": os.environ["GEMINI_API_KEY"]}, timeout=90,
                       json={"contents": [{"role": "user", "parts": parts}],
                             "generationConfig": {"temperature": 0, "responseMimeType": "application/json"}})
@@ -133,9 +142,12 @@ def ask_json(prompt: str, pdf_bytes: bytes | None = None, retries: int = 3) -> d
     """Send a prompt, get a dict back (or None). Cached; retries on 429/5xx."""
     global last_error
     prov = provider()
+    if pdf_bytes:                      # scans always go to the vision model
+        prov = "gemini" if can_read_pdf() else None
     if prov is None:
         return None
-    key = f"{prov}|{model_name()}|{prompt}|{hashlib.sha256(pdf_bytes or b'').hexdigest()}"
+    model = gemini_model() if prov == "gemini" else model_name()
+    key = f"{prov}|{model}|{prompt}|{hashlib.sha256(pdf_bytes or b'').hexdigest()}"
     cp = _cache_path(key)
     if cp.exists():
         return json.loads(cp.read_text())
@@ -145,8 +157,6 @@ def ask_json(prompt: str, pdf_bytes: bytes | None = None, retries: int = 3) -> d
             if prov == "gemini":
                 text = _call_gemini(prompt, pdf_bytes)
             else:
-                if pdf_bytes:
-                    return None  # text-only provider can't read scans
                 text = _call_openai_compat(prompt)
             out = _parse_json(text)
             if out is not None:

@@ -154,7 +154,7 @@
     "step": "Triage",
     "status": "ok",
     "detail": "BL_COMPARISON — Keyword rules matched BL_COMPARISON (score 3.9 vs 0.0).",
-    "ms": 3
+    "ms": 2
    },
    {
     "step": "Read document",

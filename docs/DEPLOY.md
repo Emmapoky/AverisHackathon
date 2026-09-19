@@ -19,7 +19,9 @@ Hosting and database are **free, no card**. The only paid piece is the DeepSeek 
 3. In DeepSeek → Usage → **turn on the balance alert** (it's currently disabled) so the key doesn't run dry during judging. If it does run out, the app falls back to rules only instead of breaking.
 4. Test it: `python3 scripts/run_batch.py --only email_001` → the first line should say `AI: deepseek-chat (deepseek)`.
 
-**Free alternatives** if the balance runs out: Gemini free tier (also reads scanned PDFs; set `LLM_MIN_INTERVAL=4`) or Groq. See `.env.example`.
+**Scanned PDFs (optional, free):** DeepSeek can't read scans. Get a free Gemini key at <https://aistudio.google.com/apikey> (no card) and add `GEMINI_API_KEY=...` to `.env`. Gemini then reads scans only; DeepSeek does everything else. The deploy script uploads it as a secret too.
+
+**If the DeepSeek balance runs out:** remove `DEEPSEEK_API_KEY` and Gemini takes over everything (set `LLM_MIN_INTERVAL=4` for its rate limit).
 
 ## 2. Create the free Supabase database (5 min)
 1. <https://supabase.com> → New project (free).
