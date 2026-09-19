@@ -71,7 +71,7 @@ cd _local/scoring-server && docker compose up --build   # http://localhost:8080
 
 ```
 ├── README.md
-├── docs/            ← brief, rules, brainstorm, idea canvas
+├── docs/            ← brief, rules, brainstorm, decisions, idea canvas
 ├── data/            ← synthetic dataset from the organizers (520 emails + SI/BL attachments)
 ├── src/             ← our code
 ├── tests/

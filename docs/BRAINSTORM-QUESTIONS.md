@@ -1,5 +1,7 @@
 # 🧠 Brainstorm Questions
 
+> ✅ **Every ⭐ question now has a recommended answer, with reasons and a comparison table, in [DECISIONS.md](DECISIONS.md).**
+>
 > Work through these as a team. Write answers right under each question.
 > ⭐ = decide first · ✅ = answered at the opening ceremony (answer filled in) · 🆕 = new since the ceremony
 > Context: [START-HERE.md](START-HERE.md) · Rules, rubric and deadlines: [HACKATHON-RULES.md](HACKATHON-RULES.md)
