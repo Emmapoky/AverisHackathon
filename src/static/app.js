@@ -32,13 +32,13 @@ async function loadStats() {
   const s = await api("/api/summary");
   const ds = s.doc_status || {};
   $("#queue-count").textContent = s.open_reviews;
+  $("#queue-count").hidden = !s.open_reviews;
   $("#stats").innerHTML = [
     ["Emails sorted", s.total, ""],
     ["BL checks done", (ds.OK || 0) + (ds.MISMATCH || 0), ""],
     ["Mistakes caught", ds.MISMATCH || 0, "bad"],
-    ["Need a person", s.open_reviews, "warn"],
-    ["Handled automatically", s.auto_pct + "%", "ok"],
-    ["Staff time saved", "≈ " + Math.round(s.minutes_saved / 60) + " h", "ok"],
+    ["Waiting for a person", s.open_reviews, "warn"],
+    ["Staff time saved", "≈" + Math.round(s.minutes_saved / 60) + "h", "ok"],
   ].map(([l, n, c]) => `<div class="stat ${c}"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("");
   state.summary = s;
 }
@@ -114,7 +114,7 @@ function comparisonTable(e) {
       <tr class="evidence" data-evrow="${i}" hidden><td></td><td>From the SI: <code>${esc(r.si_quote ?? "—")}</code><br><span class="muted">${src(r.si_source)}</span></td>
         <td>From the BL: <code>${esc(r.bl_quote ?? "—")}</code><br><span class="muted">${src(r.bl_source)}</span></td><td></td></tr>`;
   }).join("");
-  return `<h3>Shipping Instruction vs draft BL <span class="muted" style="text-transform:none;font-weight:400">— click a row to see where each value came from</span></h3>
+  return `<h3>Shipping Instruction vs draft BL <span class="muted">· click a row to see where each value came from</span></h3>
     <table class="cmp"><thead><tr><th>Field</th><th>Shipping Instruction (correct)</th><th>Draft BL</th><th>Result</th></tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -171,9 +171,9 @@ function reviewBlock(e) {
 function renderDetail(e) {
   const conf = e.class_confidence != null ? Math.round(e.class_confidence * 100) + "%" : "";
   $("#detail").innerHTML = `
-    <div class="d-head"><h2>${esc(e.subject)}</h2>
-      <div class="meta">${catPill(e.category)} ${statusPill(e.status)} <span>from ${esc(e.from)}</span> <span>· ${esc(e.email_id)}</span>
-      <span>· ${esc(BY[e.decided_by] || e.decided_by)} ${conf ? "(" + conf + " sure)" : ""}</span></div></div>
+    <div class="d-head"><div class="tags">${catPill(e.category)} ${statusPill(e.status)}</div>
+      <h2>${esc(e.subject)}</h2>
+      <div class="meta">From ${esc(e.from)} · ${esc(e.email_id)} · ${esc(BY[e.decided_by] || e.decided_by)}${conf ? " (" + conf + " sure)" : ""}</div></div>
     ${banner(e)}
     ${comparisonTable(e)}
     ${docsBlock(e)}
@@ -260,15 +260,16 @@ function renderHow() {
   const mf = Object.entries(s.mismatch_fields || {}).sort((a, b) => b[1] - a[1]);
   const max = Math.max(1, ...mf.map((x) => x[1]));
   const v = s.validation;
-  $("#view-how").innerHTML = `<h2 style="margin-top:0">How it works</h2>
-    <p>Every email goes through the same steps. Simple, clear cases are handled by fast rules. The AI is used only where it helps: unclear emails, unfamiliar labels and scanned documents. <b>When the system isn't sure, it asks a person instead of guessing.</b></p>
+  $("#view-how").innerHTML = `
+    <p style="margin-top:0">Every email goes through the same steps. Simple, clear cases are handled by fast rules. The AI is used only where it helps: unclear emails and unfamiliar labels. <b>When the system isn't sure, it asks a person instead of guessing.</b></p>
     <div class="how-flow">
-      <div class="how-step"><b>1 · Sort</b>What kind of email is it? Check BL, new SI, invoice, general or spam.</div>
-      <div class="how-step"><b>2 · Read</b>Open the attachments (txt, PDF, Word, Excel, scans) and find the 7 fields.</div>
-      <div class="how-step"><b>3 · Compare</b>Check the draft BL against the Shipping Instruction, field by field.</div>
-      <div class="how-step"><b>4 · Ask a person</b>Missing file, wrong document, blank field or unreadable scan → sent to a person with the reason.</div>
+      <div class="how-step"><span class="num">1</span><b>Sort</b>What kind of email is it? Check BL, new SI, invoice, general or spam.</div>
+      <div class="how-step"><span class="num">2</span><b>Read</b>Open the attachments (txt, PDF, Word, Excel) and find the 7 fields.</div>
+      <div class="how-step"><span class="num">3</span><b>Compare</b>Check the draft BL against the Shipping Instruction, field by field.</div>
+      <div class="how-step"><span class="num">4</span><b>Ask a person</b>Missing file, wrong document, blank field or unreadable scan → sent to a person with the reason.</div>
     </div>
     <h3>Right now</h3>
+    <p>Handled automatically: <b>${s.auto_pct}%</b> of emails. Estimated staff time saved: <b>≈${Math.round((s.minutes_saved || 0) / 60)} hours</b>.</p>
     <p>AI model: <b>${c.ai ? esc(c.ai_model) + " (" + esc(c.ai_provider) + ")" : "off — running on rules only"}</b> · Storage: <b>${esc(c.store)}</b></p>
     <div class="bars">
       ${[["Sorted by rules", by.rule || 0], ["Sorted by AI", by.llm || 0], ["Not sure (asked a person)", by.rule_low_confidence || 0]].map(([l, n]) =>
@@ -283,10 +284,20 @@ function renderHow() {
 // ---------------------------------------------------------------- routing
 async function refresh() { await Promise.all([loadStats(), state.view === "inbox" || state.view === "queue" ? loadList() : null]); }
 
+const HEADS = {
+  inbox: ["Operations", "Inbox", "Every email sorted. Every draft BL checked against its Shipping Instruction."],
+  queue: ["Human check", "Needs a person", "Cases the system couldn't decide on its own, each with the reason and the evidence."],
+  new: ["Try it live", "Check your own email", "Paste an email, attach a Shipping Instruction and a draft Bill of Lading, and see the result in seconds."],
+  how: ["About", "How it works", "Fast rules for the clear cases, AI for the unclear ones, and a person whenever it isn't sure."],
+};
+
 async function route() {
   const [, view = "inbox", id] = location.hash.split("/");
   state.view = ["inbox", "queue", "new", "how"].includes(view) ? view : "inbox";
   document.querySelectorAll(".tabs a").forEach((a) => a.classList.toggle("active", a.dataset.tab === state.view));
+  const [eb, ti, sub] = HEADS[state.view];
+  $("#eyebrow").textContent = eb; $("#page-title").textContent = ti; $("#page-sub").textContent = sub;
+  $("#stats").hidden = !(state.view === "inbox" || state.view === "queue");
   $("#view-list").hidden = !(state.view === "inbox" || state.view === "queue");
   $("#view-new").hidden = state.view !== "new";
   $("#view-how").hidden = state.view !== "how";
@@ -301,7 +312,8 @@ async function route() {
 async function init() {
   state.cfg = await api("/api/config");
   $("#app-name").textContent = state.cfg.app_name; document.title = state.cfg.app_name;
-  $("#ai-status").textContent = state.cfg.ai ? `AI on · ${state.cfg.ai_model}` : "AI off · rules only";
+  $("#ai-status").textContent = state.cfg.ai ? `AI · ${state.cfg.ai_model}` : "Rules only";
+  $("#ai-status").classList.toggle("off", !state.cfg.ai);
   chips();
   $("#cat-chips").addEventListener("click", (e) => { if (!e.target.dataset) return; if ("cat" in e.target.dataset) { state.cat = e.target.dataset.cat || null; chips(); loadList(); } });
   $("#status-chips").addEventListener("click", (e) => { if ("status" in (e.target.dataset || {})) { state.status = e.target.dataset.status || null; chips(); loadList(); } });
