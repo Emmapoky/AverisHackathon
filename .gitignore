@@ -1,0 +1,32 @@
+# Local-only: organizer scorer + answer key. Never commit.
+_local/
+ground_truth.json
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Node
+node_modules/
+.next/
+dist/
+build/
+
+# Outputs
+submission*.json
+!data/sample_submission.json
+*.log
+
+# OS / editors
+.DS_Store
+.vscode/
+.idea/
+.obsidian/
