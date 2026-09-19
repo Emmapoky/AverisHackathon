@@ -175,7 +175,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_002": {
   "email_id": "email_002",
@@ -210,7 +210,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_003": {
   "email_id": "email_003",
@@ -251,7 +251,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_004": {
   "email_id": "email_004",
@@ -432,7 +432,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_005": {
   "email_id": "email_005",
@@ -595,7 +595,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_005_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 138
+    "ms": 36
    },
    {
     "step": "Read document",
@@ -610,7 +610,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_006": {
   "email_id": "email_006",
@@ -651,7 +651,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_007": {
   "email_id": "email_007",
@@ -686,7 +686,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_008": {
   "email_id": "email_008",
@@ -721,7 +721,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_009": {
   "email_id": "email_009",
@@ -899,7 +899,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_010": {
   "email_id": "email_010",
@@ -934,7 +934,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_011": {
   "email_id": "email_011",
@@ -969,7 +969,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_012": {
   "email_id": "email_012",
@@ -1004,7 +1004,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_013": {
   "email_id": "email_013",
@@ -1184,7 +1184,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_014": {
   "email_id": "email_014",
@@ -1219,7 +1219,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_015": {
   "email_id": "email_015",
@@ -1254,7 +1254,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_016": {
   "email_id": "email_016",
@@ -1295,7 +1295,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_017": {
   "email_id": "email_017",
@@ -1330,7 +1330,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_018": {
   "email_id": "email_018",
@@ -1371,7 +1371,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_019": {
   "email_id": "email_019",
@@ -1406,7 +1406,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_020": {
   "email_id": "email_020",
@@ -1441,7 +1441,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_021": {
   "email_id": "email_021",
@@ -1476,7 +1476,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_022": {
   "email_id": "email_022",
@@ -1511,7 +1511,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_023": {
   "email_id": "email_023",
@@ -1546,7 +1546,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_024": {
   "email_id": "email_024",
@@ -1581,7 +1581,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_025": {
   "email_id": "email_025",
@@ -1762,7 +1762,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_026": {
   "email_id": "email_026",
@@ -1797,7 +1797,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_027": {
   "email_id": "email_027",
@@ -1832,7 +1832,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_028": {
   "email_id": "email_028",
@@ -1867,7 +1867,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_029": {
   "email_id": "email_029",
@@ -1902,7 +1902,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_030": {
   "email_id": "email_030",
@@ -1937,7 +1937,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_031": {
   "email_id": "email_031",
@@ -2118,7 +2118,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_032": {
   "email_id": "email_032",
@@ -2296,7 +2296,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_033": {
   "email_id": "email_033",
@@ -2328,10 +2328,10 @@
     "step": "Triage",
     "status": "ok",
     "detail": "SI_REQUEST — Keyword rules matched SI_REQUEST (score 5.0 vs 1.5).",
-    "ms": 10
+    "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_034": {
   "email_id": "email_034",
@@ -2509,7 +2509,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_035": {
   "email_id": "email_035",
@@ -2544,7 +2544,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_036": {
   "email_id": "email_036",
@@ -2585,7 +2585,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_037": {
   "email_id": "email_037",
@@ -2620,7 +2620,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_038": {
   "email_id": "email_038",
@@ -2661,7 +2661,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_039": {
   "email_id": "email_039",
@@ -2696,7 +2696,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_040": {
   "email_id": "email_040",
@@ -2874,7 +2874,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_041": {
   "email_id": "email_041",
@@ -2906,10 +2906,10 @@
     "step": "Triage",
     "status": "ok",
     "detail": "INVOICE_QUERY — Keyword rules matched INVOICE_QUERY (score 4.3 vs 0.0).",
-    "ms": 3
+    "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_042": {
   "email_id": "email_042",
@@ -2944,7 +2944,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_043": {
   "email_id": "email_043",
@@ -3124,7 +3124,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_044": {
   "email_id": "email_044",
@@ -3302,7 +3302,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_045": {
   "email_id": "email_045",
@@ -3337,7 +3337,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_046": {
   "email_id": "email_046",
@@ -3517,7 +3517,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_047": {
   "email_id": "email_047",
@@ -3558,7 +3558,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_048": {
   "email_id": "email_048",
@@ -3593,7 +3593,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_049": {
   "email_id": "email_049",
@@ -3634,7 +3634,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_050": {
   "email_id": "email_050",
@@ -3675,7 +3675,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_051": {
   "email_id": "email_051",
@@ -3844,7 +3844,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_051_BL.txt: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 0
    },
    {
     "step": "Verify",
@@ -3853,7 +3853,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_052": {
   "email_id": "email_052",
@@ -4016,7 +4016,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_052_SI.txt: looks like SI, found 7/7 fields by label",
-    "ms": 3
+    "ms": 0
    },
    {
     "step": "Read document",
@@ -4031,7 +4031,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_053": {
   "email_id": "email_053",
@@ -4066,7 +4066,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_054": {
   "email_id": "email_054",
@@ -4101,7 +4101,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_055": {
   "email_id": "email_055",
@@ -4264,13 +4264,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_055_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 6
+    "ms": 1
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_055_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 44
+    "ms": 18
    },
    {
     "step": "Verify",
@@ -4279,7 +4279,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_056": {
   "email_id": "email_056",
@@ -4457,7 +4457,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_057": {
   "email_id": "email_057",
@@ -4492,7 +4492,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_058": {
   "email_id": "email_058",
@@ -4661,7 +4661,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_058_BL.txt: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 0
    },
    {
     "step": "Verify",
@@ -4670,7 +4670,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_059": {
   "email_id": "email_059",
@@ -4833,7 +4833,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_059_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 50
+    "ms": 28
    },
    {
     "step": "Read document",
@@ -4848,7 +4848,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_060": {
   "email_id": "email_060",
@@ -4883,7 +4883,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_061": {
   "email_id": "email_061",
@@ -4924,7 +4924,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_062": {
   "email_id": "email_062",
@@ -4959,7 +4959,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_063": {
   "email_id": "email_063",
@@ -5000,7 +5000,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_064": {
   "email_id": "email_064",
@@ -5178,7 +5178,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_065": {
   "email_id": "email_065",
@@ -5359,7 +5359,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_066": {
   "email_id": "email_066",
@@ -5400,7 +5400,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_067": {
   "email_id": "email_067",
@@ -5435,7 +5435,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_068": {
   "email_id": "email_068",
@@ -5613,7 +5613,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_069": {
   "email_id": "email_069",
@@ -5648,7 +5648,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_070": {
   "email_id": "email_070",
@@ -5683,7 +5683,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_071": {
   "email_id": "email_071",
@@ -5864,7 +5864,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_072": {
   "email_id": "email_072",
@@ -5899,7 +5899,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_073": {
   "email_id": "email_073",
@@ -5934,7 +5934,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_074": {
   "email_id": "email_074",
@@ -5969,7 +5969,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_075": {
   "email_id": "email_075",
@@ -6004,7 +6004,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_076": {
   "email_id": "email_076",
@@ -6039,7 +6039,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_077": {
   "email_id": "email_077",
@@ -6080,7 +6080,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_078": {
   "email_id": "email_078",
@@ -6115,7 +6115,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_079": {
   "email_id": "email_079",
@@ -6150,7 +6150,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_080": {
   "email_id": "email_080",
@@ -6191,7 +6191,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_081": {
   "email_id": "email_081",
@@ -6232,7 +6232,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_082": {
   "email_id": "email_082",
@@ -6410,7 +6410,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_083": {
   "email_id": "email_083",
@@ -6445,7 +6445,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_084": {
   "email_id": "email_084",
@@ -6480,7 +6480,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_085": {
   "email_id": "email_085",
@@ -6515,7 +6515,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_086": {
   "email_id": "email_086",
@@ -6550,7 +6550,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_087": {
   "email_id": "email_087",
@@ -6585,7 +6585,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_088": {
   "email_id": "email_088",
@@ -6626,7 +6626,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_089": {
   "email_id": "email_089",
@@ -6661,7 +6661,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_090": {
   "email_id": "email_090",
@@ -6839,7 +6839,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_091": {
   "email_id": "email_091",
@@ -7019,7 +7019,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_092": {
   "email_id": "email_092",
@@ -7060,7 +7060,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_093": {
   "email_id": "email_093",
@@ -7095,7 +7095,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_094": {
   "email_id": "email_094",
@@ -7130,7 +7130,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_095": {
   "email_id": "email_095",
@@ -7171,7 +7171,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_096": {
   "email_id": "email_096",
@@ -7349,7 +7349,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_097": {
   "email_id": "email_097",
@@ -7515,13 +7515,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_097_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 1
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_097_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -7530,7 +7530,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_098": {
   "email_id": "email_098",
@@ -7565,7 +7565,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_099": {
   "email_id": "email_099",
@@ -7600,7 +7600,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_100": {
   "email_id": "email_100",
@@ -7641,7 +7641,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_101": {
   "email_id": "email_101",
@@ -7676,7 +7676,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_102": {
   "email_id": "email_102",
@@ -7711,7 +7711,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_103": {
   "email_id": "email_103",
@@ -7746,7 +7746,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_104": {
   "email_id": "email_104",
@@ -7781,7 +7781,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_105": {
   "email_id": "email_105",
@@ -7822,7 +7822,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_106": {
   "email_id": "email_106",
@@ -7857,7 +7857,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_107": {
   "email_id": "email_107",
@@ -8023,13 +8023,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_107_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 3
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_107_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -8038,7 +8038,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_108": {
   "email_id": "email_108",
@@ -8073,7 +8073,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_109": {
   "email_id": "email_109",
@@ -8114,7 +8114,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_110": {
   "email_id": "email_110",
@@ -8149,7 +8149,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_111": {
   "email_id": "email_111",
@@ -8329,7 +8329,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_112": {
   "email_id": "email_112",
@@ -8364,7 +8364,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_113": {
   "email_id": "email_113",
@@ -8542,7 +8542,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_114": {
   "email_id": "email_114",
@@ -8583,7 +8583,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_115": {
   "email_id": "email_115",
@@ -8618,7 +8618,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_116": {
   "email_id": "email_116",
@@ -8653,7 +8653,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_117": {
   "email_id": "email_117",
@@ -8688,7 +8688,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_118": {
   "email_id": "email_118",
@@ -8866,7 +8866,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_119": {
   "email_id": "email_119",
@@ -9046,7 +9046,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_120": {
   "email_id": "email_120",
@@ -9081,7 +9081,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_121": {
   "email_id": "email_121",
@@ -9261,7 +9261,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_122": {
   "email_id": "email_122",
@@ -9296,7 +9296,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_123": {
   "email_id": "email_123",
@@ -9331,7 +9331,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_124": {
   "email_id": "email_124",
@@ -9366,7 +9366,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_125": {
   "email_id": "email_125",
@@ -9401,7 +9401,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_126": {
   "email_id": "email_126",
@@ -9436,7 +9436,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_127": {
   "email_id": "email_127",
@@ -9471,7 +9471,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_128": {
   "email_id": "email_128",
@@ -9652,7 +9652,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_129": {
   "email_id": "email_129",
@@ -9833,7 +9833,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_130": {
   "email_id": "email_130",
@@ -9868,7 +9868,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_131": {
   "email_id": "email_131",
@@ -9903,7 +9903,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_132": {
   "email_id": "email_132",
@@ -10081,7 +10081,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_133": {
   "email_id": "email_133",
@@ -10261,7 +10261,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_134": {
   "email_id": "email_134",
@@ -10296,7 +10296,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_135": {
   "email_id": "email_135",
@@ -10331,7 +10331,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_136": {
   "email_id": "email_136",
@@ -10372,7 +10372,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_137": {
   "email_id": "email_137",
@@ -10407,7 +10407,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_138": {
   "email_id": "email_138",
@@ -10442,7 +10442,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_139": {
   "email_id": "email_139",
@@ -10477,7 +10477,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_140": {
   "email_id": "email_140",
@@ -10512,7 +10512,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_141": {
   "email_id": "email_141",
@@ -10553,7 +10553,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_142": {
   "email_id": "email_142",
@@ -10588,7 +10588,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_143": {
   "email_id": "email_143",
@@ -10766,7 +10766,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_144": {
   "email_id": "email_144",
@@ -10947,7 +10947,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_145": {
   "email_id": "email_145",
@@ -11127,7 +11127,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_146": {
   "email_id": "email_146",
@@ -11305,7 +11305,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_147": {
   "email_id": "email_147",
@@ -11340,7 +11340,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_148": {
   "email_id": "email_148",
@@ -11375,7 +11375,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_149": {
   "email_id": "email_149",
@@ -11410,7 +11410,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_150": {
   "email_id": "email_150",
@@ -11445,7 +11445,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_151": {
   "email_id": "email_151",
@@ -11480,7 +11480,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_152": {
   "email_id": "email_152",
@@ -11521,7 +11521,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_153": {
   "email_id": "email_153",
@@ -11556,7 +11556,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_154": {
   "email_id": "email_154",
@@ -11588,10 +11588,10 @@
     "step": "Triage",
     "status": "ok",
     "detail": "SI_REQUEST — Keyword rules matched SI_REQUEST (score 5.6 vs 1.5).",
-    "ms": 0
+    "ms": 1
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_155": {
   "email_id": "email_155",
@@ -11626,7 +11626,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_156": {
   "email_id": "email_156",
@@ -11661,7 +11661,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_157": {
   "email_id": "email_157",
@@ -11696,7 +11696,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_158": {
   "email_id": "email_158",
@@ -11737,7 +11737,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_159": {
   "email_id": "email_159",
@@ -11772,7 +11772,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_160": {
   "email_id": "email_160",
@@ -11935,7 +11935,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_160_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 3
+    "ms": 2
    },
    {
     "step": "Read document",
@@ -11950,7 +11950,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_161": {
   "email_id": "email_161",
@@ -11991,7 +11991,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_162": {
   "email_id": "email_162",
@@ -12026,7 +12026,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_163": {
   "email_id": "email_163",
@@ -12061,7 +12061,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_164": {
   "email_id": "email_164",
@@ -12096,7 +12096,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_165": {
   "email_id": "email_165",
@@ -12131,7 +12131,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_166": {
   "email_id": "email_166",
@@ -12166,7 +12166,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_167": {
   "email_id": "email_167",
@@ -12344,7 +12344,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_168": {
   "email_id": "email_168",
@@ -12379,7 +12379,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_169": {
   "email_id": "email_169",
@@ -12414,7 +12414,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_170": {
   "email_id": "email_170",
@@ -12449,7 +12449,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_171": {
   "email_id": "email_171",
@@ -12627,7 +12627,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_172": {
   "email_id": "email_172",
@@ -12662,7 +12662,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_173": {
   "email_id": "email_173",
@@ -12697,7 +12697,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_174": {
   "email_id": "email_174",
@@ -12878,7 +12878,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_175": {
   "email_id": "email_175",
@@ -13056,7 +13056,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_176": {
   "email_id": "email_176",
@@ -13097,7 +13097,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_177": {
   "email_id": "email_177",
@@ -13132,7 +13132,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_178": {
   "email_id": "email_178",
@@ -13312,7 +13312,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_179": {
   "email_id": "email_179",
@@ -13347,7 +13347,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_180": {
   "email_id": "email_180",
@@ -13382,7 +13382,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_181": {
   "email_id": "email_181",
@@ -13417,7 +13417,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_182": {
   "email_id": "email_182",
@@ -13598,7 +13598,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_183": {
   "email_id": "email_183",
@@ -13633,7 +13633,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_184": {
   "email_id": "email_184",
@@ -13668,7 +13668,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_185": {
   "email_id": "email_185",
@@ -13703,7 +13703,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_186": {
   "email_id": "email_186",
@@ -13744,7 +13744,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_187": {
   "email_id": "email_187",
@@ -13785,7 +13785,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_188": {
   "email_id": "email_188",
@@ -13820,7 +13820,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_189": {
   "email_id": "email_189",
@@ -13861,7 +13861,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_190": {
   "email_id": "email_190",
@@ -13902,7 +13902,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_191": {
   "email_id": "email_191",
@@ -13937,7 +13937,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_192": {
   "email_id": "email_192",
@@ -13972,7 +13972,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_193": {
   "email_id": "email_193",
@@ -14007,7 +14007,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_194": {
   "email_id": "email_194",
@@ -14042,7 +14042,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_195": {
   "email_id": "email_195",
@@ -14083,7 +14083,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_196": {
   "email_id": "email_196",
@@ -14118,7 +14118,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_197": {
   "email_id": "email_197",
@@ -14296,7 +14296,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_198": {
   "email_id": "email_198",
@@ -14474,7 +14474,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_199": {
   "email_id": "email_199",
@@ -14515,7 +14515,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_200": {
   "email_id": "email_200",
@@ -14550,7 +14550,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_201": {
   "email_id": "email_201",
@@ -14585,7 +14585,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_202": {
   "email_id": "email_202",
@@ -14620,7 +14620,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_203": {
   "email_id": "email_203",
@@ -14655,7 +14655,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_204": {
   "email_id": "email_204",
@@ -14690,7 +14690,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_205": {
   "email_id": "email_205",
@@ -14725,7 +14725,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_206": {
   "email_id": "email_206",
@@ -14760,7 +14760,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_207": {
   "email_id": "email_207",
@@ -14801,7 +14801,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_208": {
   "email_id": "email_208",
@@ -14979,7 +14979,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_209": {
   "email_id": "email_209",
@@ -15014,7 +15014,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_210": {
   "email_id": "email_210",
@@ -15055,7 +15055,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_211": {
   "email_id": "email_211",
@@ -15090,7 +15090,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_212": {
   "email_id": "email_212",
@@ -15125,7 +15125,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_213": {
   "email_id": "email_213",
@@ -15160,7 +15160,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_214": {
   "email_id": "email_214",
@@ -15195,7 +15195,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_215": {
   "email_id": "email_215",
@@ -15230,7 +15230,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_216": {
   "email_id": "email_216",
@@ -15265,7 +15265,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_217": {
   "email_id": "email_217",
@@ -15300,7 +15300,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_218": {
   "email_id": "email_218",
@@ -15335,7 +15335,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_219": {
   "email_id": "email_219",
@@ -15370,7 +15370,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_220": {
   "email_id": "email_220",
@@ -15411,7 +15411,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_221": {
   "email_id": "email_221",
@@ -15446,7 +15446,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_222": {
   "email_id": "email_222",
@@ -15481,7 +15481,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_223": {
   "email_id": "email_223",
@@ -15522,7 +15522,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_224": {
   "email_id": "email_224",
@@ -15557,7 +15557,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_225": {
   "email_id": "email_225",
@@ -15737,7 +15737,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_226": {
   "email_id": "email_226",
@@ -15772,7 +15772,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_227": {
   "email_id": "email_227",
@@ -15950,7 +15950,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_228": {
   "email_id": "email_228",
@@ -15985,7 +15985,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_229": {
   "email_id": "email_229",
@@ -16026,7 +16026,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_230": {
   "email_id": "email_230",
@@ -16061,7 +16061,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_231": {
   "email_id": "email_231",
@@ -16096,7 +16096,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_232": {
   "email_id": "email_232",
@@ -16131,7 +16131,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_233": {
   "email_id": "email_233",
@@ -16166,7 +16166,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_234": {
   "email_id": "email_234",
@@ -16201,7 +16201,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_235": {
   "email_id": "email_235",
@@ -16379,7 +16379,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_236": {
   "email_id": "email_236",
@@ -16414,7 +16414,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_237": {
   "email_id": "email_237",
@@ -16455,7 +16455,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_238": {
   "email_id": "email_238",
@@ -16490,7 +16490,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_239": {
   "email_id": "email_239",
@@ -16668,7 +16668,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_240": {
   "email_id": "email_240",
@@ -16703,7 +16703,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_241": {
   "email_id": "email_241",
@@ -16738,7 +16738,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_242": {
   "email_id": "email_242",
@@ -16779,7 +16779,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_243": {
   "email_id": "email_243",
@@ -16960,7 +16960,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_244": {
   "email_id": "email_244",
@@ -16995,7 +16995,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_245": {
   "email_id": "email_245",
@@ -17030,7 +17030,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_246": {
   "email_id": "email_246",
@@ -17065,7 +17065,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_247": {
   "email_id": "email_247",
@@ -17106,7 +17106,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_248": {
   "email_id": "email_248",
@@ -17141,7 +17141,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_249": {
   "email_id": "email_249",
@@ -17319,7 +17319,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_250": {
   "email_id": "email_250",
@@ -17360,7 +17360,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_251": {
   "email_id": "email_251",
@@ -17395,7 +17395,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_252": {
   "email_id": "email_252",
@@ -17430,7 +17430,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_253": {
   "email_id": "email_253",
@@ -17465,7 +17465,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_254": {
   "email_id": "email_254",
@@ -17500,7 +17500,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_255": {
   "email_id": "email_255",
@@ -17535,7 +17535,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_256": {
   "email_id": "email_256",
@@ -17716,7 +17716,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_257": {
   "email_id": "email_257",
@@ -17751,7 +17751,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_258": {
   "email_id": "email_258",
@@ -17786,7 +17786,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_259": {
   "email_id": "email_259",
@@ -17827,7 +17827,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_260": {
   "email_id": "email_260",
@@ -17862,7 +17862,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_261": {
   "email_id": "email_261",
@@ -17903,7 +17903,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_262": {
   "email_id": "email_262",
@@ -17938,7 +17938,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_263": {
   "email_id": "email_263",
@@ -17979,7 +17979,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_264": {
   "email_id": "email_264",
@@ -18014,7 +18014,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_265": {
   "email_id": "email_265",
@@ -18055,7 +18055,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_266": {
   "email_id": "email_266",
@@ -18090,7 +18090,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_267": {
   "email_id": "email_267",
@@ -18125,7 +18125,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_268": {
   "email_id": "email_268",
@@ -18160,7 +18160,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_269": {
   "email_id": "email_269",
@@ -18195,7 +18195,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_270": {
   "email_id": "email_270",
@@ -18375,7 +18375,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_271": {
   "email_id": "email_271",
@@ -18416,7 +18416,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_272": {
   "email_id": "email_272",
@@ -18451,7 +18451,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_273": {
   "email_id": "email_273",
@@ -18614,13 +18614,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_273_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_273_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Verify",
@@ -18629,7 +18629,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_274": {
   "email_id": "email_274",
@@ -18664,7 +18664,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_275": {
   "email_id": "email_275",
@@ -18842,7 +18842,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_276": {
   "email_id": "email_276",
@@ -18877,7 +18877,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_277": {
   "email_id": "email_277",
@@ -18912,7 +18912,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_278": {
   "email_id": "email_278",
@@ -18947,7 +18947,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_279": {
   "email_id": "email_279",
@@ -18982,7 +18982,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_280": {
   "email_id": "email_280",
@@ -19017,7 +19017,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_281": {
   "email_id": "email_281",
@@ -19058,7 +19058,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_282": {
   "email_id": "email_282",
@@ -19099,7 +19099,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_283": {
   "email_id": "email_283",
@@ -19134,7 +19134,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_284": {
   "email_id": "email_284",
@@ -19169,7 +19169,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_285": {
   "email_id": "email_285",
@@ -19204,7 +19204,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_286": {
   "email_id": "email_286",
@@ -19239,7 +19239,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_287": {
   "email_id": "email_287",
@@ -19274,7 +19274,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_288": {
   "email_id": "email_288",
@@ -19315,7 +19315,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_289": {
   "email_id": "email_289",
@@ -19350,7 +19350,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_290": {
   "email_id": "email_290",
@@ -19385,7 +19385,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_291": {
   "email_id": "email_291",
@@ -19557,7 +19557,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_291_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -19566,7 +19566,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_292": {
   "email_id": "email_292",
@@ -19607,7 +19607,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_293": {
   "email_id": "email_293",
@@ -19642,7 +19642,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_294": {
   "email_id": "email_294",
@@ -19677,7 +19677,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_295": {
   "email_id": "email_295",
@@ -19712,7 +19712,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_296": {
   "email_id": "email_296",
@@ -19890,7 +19890,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_297": {
   "email_id": "email_297",
@@ -19925,7 +19925,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_298": {
   "email_id": "email_298",
@@ -19960,7 +19960,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_299": {
   "email_id": "email_299",
@@ -20001,7 +20001,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_300": {
   "email_id": "email_300",
@@ -20167,13 +20167,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_300_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 3
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_300_BL.xlsx: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 6
    },
    {
     "step": "Verify",
@@ -20182,7 +20182,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_301": {
   "email_id": "email_301",
@@ -20223,7 +20223,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_302": {
   "email_id": "email_302",
@@ -20394,7 +20394,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_302_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -20403,7 +20403,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_303": {
   "email_id": "email_303",
@@ -20438,7 +20438,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_304": {
   "email_id": "email_304",
@@ -20473,7 +20473,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_305": {
   "email_id": "email_305",
@@ -20514,7 +20514,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_306": {
   "email_id": "email_306",
@@ -20549,7 +20549,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_307": {
   "email_id": "email_307",
@@ -20727,7 +20727,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_308": {
   "email_id": "email_308",
@@ -20762,7 +20762,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_309": {
   "email_id": "email_309",
@@ -20803,7 +20803,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_310": {
   "email_id": "email_310",
@@ -20838,7 +20838,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_311": {
   "email_id": "email_311",
@@ -20873,7 +20873,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_312": {
   "email_id": "email_312",
@@ -21054,7 +21054,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_313": {
   "email_id": "email_313",
@@ -21235,7 +21235,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_314": {
   "email_id": "email_314",
@@ -21270,7 +21270,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_315": {
   "email_id": "email_315",
@@ -21305,7 +21305,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_316": {
   "email_id": "email_316",
@@ -21340,7 +21340,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_317": {
   "email_id": "email_317",
@@ -21375,7 +21375,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_318": {
   "email_id": "email_318",
@@ -21416,7 +21416,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_319": {
   "email_id": "email_319",
@@ -21457,7 +21457,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_320": {
   "email_id": "email_320",
@@ -21492,7 +21492,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_321": {
   "email_id": "email_321",
@@ -21533,7 +21533,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_322": {
   "email_id": "email_322",
@@ -21568,7 +21568,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_323": {
   "email_id": "email_323",
@@ -21603,7 +21603,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_324": {
   "email_id": "email_324",
@@ -21784,7 +21784,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_325": {
   "email_id": "email_325",
@@ -21819,7 +21819,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_326": {
   "email_id": "email_326",
@@ -21860,7 +21860,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_327": {
   "email_id": "email_327",
@@ -21895,7 +21895,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_328": {
   "email_id": "email_328",
@@ -21930,7 +21930,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_329": {
   "email_id": "email_329",
@@ -21965,7 +21965,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_330": {
   "email_id": "email_330",
@@ -22000,7 +22000,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_331": {
   "email_id": "email_331",
@@ -22035,7 +22035,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_332": {
   "email_id": "email_332",
@@ -22070,7 +22070,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_333": {
   "email_id": "email_333",
@@ -22105,7 +22105,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_334": {
   "email_id": "email_334",
@@ -22286,7 +22286,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_335": {
   "email_id": "email_335",
@@ -22464,7 +22464,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_336": {
   "email_id": "email_336",
@@ -22499,7 +22499,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_337": {
   "email_id": "email_337",
@@ -22540,7 +22540,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_338": {
   "email_id": "email_338",
@@ -22575,7 +22575,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_339": {
   "email_id": "email_339",
@@ -22610,7 +22610,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_340": {
   "email_id": "email_340",
@@ -22645,7 +22645,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_341": {
   "email_id": "email_341",
@@ -22686,7 +22686,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_342": {
   "email_id": "email_342",
@@ -22867,7 +22867,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_343": {
   "email_id": "email_343",
@@ -22908,7 +22908,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_344": {
   "email_id": "email_344",
@@ -22943,7 +22943,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_345": {
   "email_id": "email_345",
@@ -22978,7 +22978,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_346": {
   "email_id": "email_346",
@@ -23013,7 +23013,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_347": {
   "email_id": "email_347",
@@ -23048,7 +23048,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_348": {
   "email_id": "email_348",
@@ -23226,7 +23226,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_349": {
   "email_id": "email_349",
@@ -23404,7 +23404,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_350": {
   "email_id": "email_350",
@@ -23445,7 +23445,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_351": {
   "email_id": "email_351",
@@ -23626,7 +23626,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_352": {
   "email_id": "email_352",
@@ -23661,7 +23661,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_353": {
   "email_id": "email_353",
@@ -23696,7 +23696,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_354": {
   "email_id": "email_354",
@@ -23868,7 +23868,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_354_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 3
    },
    {
     "step": "Verify",
@@ -23877,7 +23877,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_355": {
   "email_id": "email_355",
@@ -23912,7 +23912,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_356": {
   "email_id": "email_356",
@@ -23947,7 +23947,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_357": {
   "email_id": "email_357",
@@ -23982,7 +23982,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_358": {
   "email_id": "email_358",
@@ -24017,7 +24017,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_359": {
   "email_id": "email_359",
@@ -24052,7 +24052,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_360": {
   "email_id": "email_360",
@@ -24087,7 +24087,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_361": {
   "email_id": "email_361",
@@ -24268,7 +24268,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_362": {
   "email_id": "email_362",
@@ -24303,7 +24303,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_363": {
   "email_id": "email_363",
@@ -24338,7 +24338,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_364": {
   "email_id": "email_364",
@@ -24516,7 +24516,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_365": {
   "email_id": "email_365",
@@ -24551,7 +24551,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_366": {
   "email_id": "email_366",
@@ -24586,7 +24586,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_367": {
   "email_id": "email_367",
@@ -24764,7 +24764,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_368": {
   "email_id": "email_368",
@@ -24799,7 +24799,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_369": {
   "email_id": "email_369",
@@ -24834,7 +24834,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_370": {
   "email_id": "email_370",
@@ -24869,7 +24869,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_371": {
   "email_id": "email_371",
@@ -24904,7 +24904,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_372": {
   "email_id": "email_372",
@@ -24939,7 +24939,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_373": {
   "email_id": "email_373",
@@ -24974,7 +24974,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_374": {
   "email_id": "email_374",
@@ -25009,7 +25009,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_375": {
   "email_id": "email_375",
@@ -25044,7 +25044,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_376": {
   "email_id": "email_376",
@@ -25079,7 +25079,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_377": {
   "email_id": "email_377",
@@ -25257,7 +25257,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_378": {
   "email_id": "email_378",
@@ -25435,7 +25435,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_379": {
   "email_id": "email_379",
@@ -25615,7 +25615,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_380": {
   "email_id": "email_380",
@@ -25650,7 +25650,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_381": {
   "email_id": "email_381",
@@ -25691,7 +25691,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_382": {
   "email_id": "email_382",
@@ -25726,7 +25726,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_383": {
   "email_id": "email_383",
@@ -25904,7 +25904,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_384": {
   "email_id": "email_384",
@@ -25945,7 +25945,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_385": {
   "email_id": "email_385",
@@ -25986,7 +25986,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_386": {
   "email_id": "email_386",
@@ -26021,7 +26021,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_387": {
   "email_id": "email_387",
@@ -26056,7 +26056,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_388": {
   "email_id": "email_388",
@@ -26091,7 +26091,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_389": {
   "email_id": "email_389",
@@ -26126,7 +26126,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_390": {
   "email_id": "email_390",
@@ -26161,7 +26161,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_391": {
   "email_id": "email_391",
@@ -26339,7 +26339,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_392": {
   "email_id": "email_392",
@@ -26374,7 +26374,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_393": {
   "email_id": "email_393",
@@ -26409,7 +26409,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_394": {
   "email_id": "email_394",
@@ -26444,7 +26444,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_395": {
   "email_id": "email_395",
@@ -26479,7 +26479,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_396": {
   "email_id": "email_396",
@@ -26514,7 +26514,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_397": {
   "email_id": "email_397",
@@ -26549,7 +26549,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_398": {
   "email_id": "email_398",
@@ -26727,7 +26727,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_399": {
   "email_id": "email_399",
@@ -26762,7 +26762,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_400": {
   "email_id": "email_400",
@@ -26797,7 +26797,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_401": {
   "email_id": "email_401",
@@ -26838,7 +26838,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_402": {
   "email_id": "email_402",
@@ -26873,7 +26873,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_403": {
   "email_id": "email_403",
@@ -26908,7 +26908,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_404": {
   "email_id": "email_404",
@@ -26943,7 +26943,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_405": {
   "email_id": "email_405",
@@ -27121,7 +27121,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_406": {
   "email_id": "email_406",
@@ -27156,7 +27156,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_407": {
   "email_id": "email_407",
@@ -27319,13 +27319,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_407_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_407_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Verify",
@@ -27334,7 +27334,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_408": {
   "email_id": "email_408",
@@ -27512,7 +27512,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_409": {
   "email_id": "email_409",
@@ -27690,7 +27690,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_410": {
   "email_id": "email_410",
@@ -27870,7 +27870,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_411": {
   "email_id": "email_411",
@@ -28039,7 +28039,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_411_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Verify",
@@ -28048,7 +28048,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_412": {
   "email_id": "email_412",
@@ -28083,7 +28083,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_413": {
   "email_id": "email_413",
@@ -28118,7 +28118,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_414": {
   "email_id": "email_414",
@@ -28153,7 +28153,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_415": {
   "email_id": "email_415",
@@ -28188,7 +28188,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_416": {
   "email_id": "email_416",
@@ -28368,7 +28368,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_417": {
   "email_id": "email_417",
@@ -28403,7 +28403,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_418": {
   "email_id": "email_418",
@@ -28438,7 +28438,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_419": {
   "email_id": "email_419",
@@ -28479,7 +28479,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_420": {
   "email_id": "email_420",
@@ -28514,7 +28514,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_421": {
   "email_id": "email_421",
@@ -28555,7 +28555,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_422": {
   "email_id": "email_422",
@@ -28590,7 +28590,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_423": {
   "email_id": "email_423",
@@ -28631,7 +28631,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_424": {
   "email_id": "email_424",
@@ -28672,7 +28672,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_425": {
   "email_id": "email_425",
@@ -28707,7 +28707,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_426": {
   "email_id": "email_426",
@@ -28888,7 +28888,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_427": {
   "email_id": "email_427",
@@ -28923,7 +28923,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_428": {
   "email_id": "email_428",
@@ -29101,7 +29101,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_429": {
   "email_id": "email_429",
@@ -29136,7 +29136,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_430": {
   "email_id": "email_430",
@@ -29171,7 +29171,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_431": {
   "email_id": "email_431",
@@ -29206,7 +29206,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_432": {
   "email_id": "email_432",
@@ -29247,7 +29247,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_433": {
   "email_id": "email_433",
@@ -29282,7 +29282,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_434": {
   "email_id": "email_434",
@@ -29447,13 +29447,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_434_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_434_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Verify",
@@ -29462,7 +29462,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_435": {
   "email_id": "email_435",
@@ -29633,7 +29633,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_435_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 3
    },
    {
     "step": "Verify",
@@ -29642,7 +29642,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_436": {
   "email_id": "email_436",
@@ -29683,7 +29683,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_437": {
   "email_id": "email_437",
@@ -29718,7 +29718,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_438": {
   "email_id": "email_438",
@@ -29753,7 +29753,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_439": {
   "email_id": "email_439",
@@ -29788,7 +29788,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_440": {
   "email_id": "email_440",
@@ -29829,7 +29829,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_441": {
   "email_id": "email_441",
@@ -29864,7 +29864,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_442": {
   "email_id": "email_442",
@@ -29905,7 +29905,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_443": {
   "email_id": "email_443",
@@ -29940,7 +29940,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_444": {
   "email_id": "email_444",
@@ -29981,7 +29981,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_445": {
   "email_id": "email_445",
@@ -30016,7 +30016,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_446": {
   "email_id": "email_446",
@@ -30057,7 +30057,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_447": {
   "email_id": "email_447",
@@ -30098,7 +30098,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_448": {
   "email_id": "email_448",
@@ -30139,7 +30139,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_449": {
   "email_id": "email_449",
@@ -30174,7 +30174,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_450": {
   "email_id": "email_450",
@@ -30209,7 +30209,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_451": {
   "email_id": "email_451",
@@ -30250,7 +30250,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_452": {
   "email_id": "email_452",
@@ -30285,7 +30285,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_453": {
   "email_id": "email_453",
@@ -30463,7 +30463,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_454": {
   "email_id": "email_454",
@@ -30504,7 +30504,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_455": {
   "email_id": "email_455",
@@ -30539,7 +30539,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_456": {
   "email_id": "email_456",
@@ -30580,7 +30580,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_457": {
   "email_id": "email_457",
@@ -30615,7 +30615,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_458": {
   "email_id": "email_458",
@@ -30647,10 +30647,10 @@
     "step": "Triage",
     "status": "ok",
     "detail": "INVOICE_QUERY — Keyword rules matched INVOICE_QUERY (score 4.1 vs 0.0).",
-    "ms": 0
+    "ms": 1
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_459": {
   "email_id": "email_459",
@@ -30691,7 +30691,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_460": {
   "email_id": "email_460",
@@ -30726,7 +30726,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_461": {
   "email_id": "email_461",
@@ -30761,7 +30761,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_462": {
   "email_id": "email_462",
@@ -30924,13 +30924,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_462_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 3
+    "ms": 1
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_462_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -30939,7 +30939,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_463": {
   "email_id": "email_463",
@@ -30974,7 +30974,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_464": {
   "email_id": "email_464",
@@ -31009,7 +31009,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_465": {
   "email_id": "email_465",
@@ -31050,7 +31050,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_466": {
   "email_id": "email_466",
@@ -31085,7 +31085,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_467": {
   "email_id": "email_467",
@@ -31120,7 +31120,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_468": {
   "email_id": "email_468",
@@ -31301,7 +31301,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_469": {
   "email_id": "email_469",
@@ -31336,7 +31336,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_470": {
   "email_id": "email_470",
@@ -31371,7 +31371,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_471": {
   "email_id": "email_471",
@@ -31406,7 +31406,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_472": {
   "email_id": "email_472",
@@ -31441,7 +31441,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_473": {
   "email_id": "email_473",
@@ -31476,7 +31476,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_474": {
   "email_id": "email_474",
@@ -31654,7 +31654,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_475": {
   "email_id": "email_475",
@@ -31689,7 +31689,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_476": {
   "email_id": "email_476",
@@ -31730,7 +31730,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_477": {
   "email_id": "email_477",
@@ -31765,7 +31765,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_478": {
   "email_id": "email_478",
@@ -31800,7 +31800,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_479": {
   "email_id": "email_479",
@@ -31963,7 +31963,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_479_SI.txt: looks like SI, found 7/7 fields by label",
-    "ms": 0
+    "ms": 1
    },
    {
     "step": "Read document",
@@ -31978,7 +31978,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_480": {
   "email_id": "email_480",
@@ -32019,7 +32019,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_481": {
   "email_id": "email_481",
@@ -32184,7 +32184,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_481_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 3
+    "ms": 1
    },
    {
     "step": "Read document",
@@ -32199,7 +32199,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_482": {
   "email_id": "email_482",
@@ -32240,7 +32240,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_483": {
   "email_id": "email_483",
@@ -32418,7 +32418,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_484": {
   "email_id": "email_484",
@@ -32453,7 +32453,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_485": {
   "email_id": "email_485",
@@ -32488,7 +32488,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_486": {
   "email_id": "email_486",
@@ -32529,7 +32529,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_487": {
   "email_id": "email_487",
@@ -32564,7 +32564,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_488": {
   "email_id": "email_488",
@@ -32599,7 +32599,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_489": {
   "email_id": "email_489",
@@ -32634,7 +32634,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_490": {
   "email_id": "email_490",
@@ -32669,7 +32669,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_491": {
   "email_id": "email_491",
@@ -32847,7 +32847,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_492": {
   "email_id": "email_492",
@@ -32882,7 +32882,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_493": {
   "email_id": "email_493",
@@ -32923,7 +32923,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_494": {
   "email_id": "email_494",
@@ -33101,7 +33101,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_495": {
   "email_id": "email_495",
@@ -33142,7 +33142,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_496": {
   "email_id": "email_496",
@@ -33320,7 +33320,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_497": {
   "email_id": "email_497",
@@ -33355,7 +33355,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_498": {
   "email_id": "email_498",
@@ -33533,7 +33533,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_499": {
   "email_id": "email_499",
@@ -33698,13 +33698,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_499_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_499_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Verify",
@@ -33713,7 +33713,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_500": {
   "email_id": "email_500",
@@ -33748,7 +33748,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_501": {
   "email_id": "email_501",
@@ -33833,7 +33833,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_502": {
   "email_id": "email_502",
@@ -33921,7 +33921,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_503": {
   "email_id": "email_503",
@@ -34009,7 +34009,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_504": {
   "email_id": "email_504",
@@ -34097,7 +34097,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_505": {
   "email_id": "email_505",
@@ -34185,7 +34185,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_506": {
   "email_id": "email_506",
@@ -34226,7 +34226,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_507": {
   "email_id": "email_507",
@@ -34294,7 +34294,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_508": {
   "email_id": "email_508",
@@ -34335,7 +34335,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_509": {
   "email_id": "email_509",
@@ -34403,7 +34403,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_510": {
   "email_id": "email_510",
@@ -34444,7 +34444,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_511": {
   "email_id": "email_511",
@@ -34529,7 +34529,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_512": {
   "email_id": "email_512",
@@ -34606,7 +34606,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_513": {
   "email_id": "email_513",
@@ -34683,7 +34683,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_514": {
   "email_id": "email_514",
@@ -34760,7 +34760,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_515": {
   "email_id": "email_515",
@@ -34845,7 +34845,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_516": {
   "email_id": "email_516",
@@ -35029,7 +35029,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_517": {
   "email_id": "email_517",
@@ -35213,7 +35213,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_518": {
   "email_id": "email_518",
@@ -35397,7 +35397,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_519": {
   "email_id": "email_519",
@@ -35579,7 +35579,7 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  },
  "email_520": {
   "email_id": "email_520",
@@ -35762,6 +35762,6 @@
     "ms": 0
    }
   ],
-  "llm_model": null
+  "llm_model": "deepseek-chat"
  }
 }

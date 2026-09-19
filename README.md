@@ -12,6 +12,8 @@ A shipping team gets **up to 2,000 emails a day** in one inbox. ShipCheck:
 
 A reviewer can confirm or correct any result in one click, and ShipCheck can write the correction email to the shipping line.
 
+👋 **Team: start with [TEAM-GUIDE.md](TEAM-GUIDE.md)** (setup in 10 minutes + who does what).
+
 🚨 **Preliminary deadline: Mon 22 Sep 2026, 12:00 PM.** See [docs/HACKATHON-RULES.md](docs/HACKATHON-RULES.md).
 
 | | |
@@ -87,12 +89,8 @@ Email ─► ① Sort ──────────────► not a BL che
 ```bash
 git clone https://github.com/Emmapoky/AverisHackathon.git
 cd AverisHackathon
-pip3 install -r requirements-dev.txt
-
-cp .env.example .env                  # optional: add the team's DeepSeek key
-python3 scripts/run_batch.py          # process all 520 emails → data/results.json
-python3 -m uvicorn app.api:app --app-dir src --port 8000
-# open http://localhost:8000
+bash scripts/setup.sh                 # installs everything, processes the emails, runs the tests
+bash scripts/start.sh                 # open http://localhost:8000
 ```
 
 ```bash

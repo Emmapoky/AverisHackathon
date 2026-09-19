@@ -7,11 +7,14 @@ here decides what a field *means*; that's fields.py.
 from __future__ import annotations
 
 import io
+import logging
 import re
 from dataclasses import dataclass, field
 from pathlib import PurePath
 
 from .fields import is_label
+
+logging.getLogger("pypdf").setLevel(logging.ERROR)  # broken PDFs are handled below
 
 DOC_TYPE_PATTERNS = [
     # order matters: "BILL OF LADING INSTRUCTION" is an SI, not a BL
