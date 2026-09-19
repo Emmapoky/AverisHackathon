@@ -244,3 +244,13 @@ def test_scans_go_to_gemini_even_when_deepseek_is_main(monkeypatch, tmp_path):
     mod.classify_email({"from": "a", "subject": "b", "body": "c"}, {"SPAM": "x"})  # text → DeepSeek
     assert "googleapis.com" in urls[0] and urls[1] == "https://api.deepseek.com/chat/completions"
     importlib.reload(llm)
+
+
+# ------------------------------------------------------------ Supabase key handling
+
+def test_supabase_new_style_key_is_not_sent_as_bearer():
+    from app.store import SupabaseStore
+    new = SupabaseStore("https://x.supabase.co", "sb_secret_abc")
+    assert new.h["apikey"] == "sb_secret_abc" and "Authorization" not in new.h
+    legacy = SupabaseStore("https://x.supabase.co", "eyJhbGciOi.payload.sig")
+    assert legacy.h["Authorization"] == "Bearer eyJhbGciOi.payload.sig"
