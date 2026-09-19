@@ -179,3 +179,36 @@ def test_binary_formats():
 def test_triage_new_wording(body, subject, cat):
     r = classify({"from": "x@y.com", "subject": subject, "body": body, "attachments": []}, use_llm=False)
     assert r["category"] == cat, r["scores"]
+
+
+# ------------------------------------------------------------ DeepSeek wiring (no network)
+
+def test_deepseek_request_shape(monkeypatch, tmp_path):
+    import importlib
+    monkeypatch.undo()                          # use the real llm.available()
+    monkeypatch.setenv("LLM_PROVIDER", "deepseek")
+    monkeypatch.setenv("DEEPSEEK_API_KEY", "test-key")
+    monkeypatch.setenv("LLM_CACHE_DIR", str(tmp_path))
+    mod = importlib.reload(llm)
+    sent = {}
+
+    class Resp:
+        status_code = 200
+        def raise_for_status(self): pass
+        def json(self): return {"choices": [{"message": {"content": '{"category": "SPAM", "confidence": 0.9, "reason": "prize scam"}'}}]}
+
+    def fake_post(url, headers, json, timeout):
+        sent.update(url=url, headers=headers, body=json)
+        return Resp()
+
+    monkeypatch.setattr(mod.requests, "post", fake_post)
+    monkeypatch.setattr(mod, "MIN_INTERVAL", 0)
+    out = mod.classify_email({"from": "a", "subject": "b", "body": "c"}, {"SPAM": "spam"})
+    assert out["category"] == "SPAM"
+    assert sent["url"] == "https://api.deepseek.com/chat/completions"
+    assert sent["headers"]["Authorization"] == "Bearer test-key"
+    assert sent["body"]["model"] == "deepseek-chat"
+    assert sent["body"]["response_format"] == {"type": "json_object"}
+    assert "json" in sent["body"]["messages"][0]["content"].lower()   # DeepSeek JSON mode requires it
+    assert not mod.can_read_pdf()                                        # scans → a person
+    importlib.reload(llm)

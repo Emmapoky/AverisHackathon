@@ -6,7 +6,7 @@
 A shipping team gets **up to 2,000 emails a day** in one inbox. ShipCheck:
 
 1. **Sorts** every email: *Check BL · New SI · Invoice · General · Spam*
-2. **Reads** the attachments (txt, PDF, Word, Excel, even scans) and finds the 7 key fields
+2. **Reads** the attachments (txt, PDF, Word, Excel) and finds the 7 key fields
 3. **Compares** the draft Bill of Lading against the Shipping Instruction, field by field
 4. **Asks a person** when it can't be sure (wrong document, missing file, blank field, unreadable scan), with the reason and the evidence. It never guesses.
 
@@ -51,7 +51,7 @@ Email ─► ① Sort ──────────────► not a BL che
              (rules → AI if unsure)
          │ BL check
          ▼
-        ② Read attachments ──► txt / PDF / Word / Excel parsed; scans → AI vision
+        ② Read attachments ──► txt / PDF / Word / Excel parsed; scans → a person
          ▼
         ③ Find the 7 fields ──► label synonyms (EN / 中文 / BM / ID) → AI for unknown labels
          ▼
@@ -63,22 +63,22 @@ Email ─► ① Sort ──────────────► not a BL che
 ```
 
 **Why this design**
-- **Rules first, AI where it helps.** Rules are instant, free and explainable. The AI handles emails in new wording or other languages, labels we've never seen, and scanned PDFs. Every email records `decided_by: rule | llm`.
+- **Rules first, AI where it helps.** Rules are instant, free and explainable. The AI (DeepSeek) handles emails in new wording or other languages, and labels we've never seen. Scanned image PDFs go to a person (optional: switch to Gemini, which can read them). Every email records `decided_by: rule | llm`.
 - **The AI reads; code compares.** Comparing `21,577` with `21,757`, or `CO., LTD` with `CO LTD`, is maths, not judgement. Code gives the same answer every time and has unit tests.
 - **Never guess.** A blank field or an unreadable scan is *not* a mismatch. It goes to a person with the reason.
 - **Evidence for every value.** Click any row to see the exact text it came from in each document.
 
 ---
 
-## 🧰 Tech stack (all free)
+## 🧰 Tech stack
 
 | Part | Tech |
 |---|---|
 | Backend / pipeline | Python 3.12, FastAPI, pypdf, python-docx, openpyxl |
 | Dashboard | Plain HTML/CSS/JS served by FastAPI (no build step) |
-| AI | Google Gemini API free tier (or any OpenAI-compatible free endpoint: Groq, OpenRouter, local Ollama). Optional |
-| Cloud | Hugging Face Spaces (Docker) + Supabase free Postgres for reviews and uploads |
-| Tests | pytest (35 tests) |
+| AI | **DeepSeek API** (`deepseek-chat`), called only when rules aren't sure. Swappable for free Gemini / Groq / Ollama via `.env` |
+| Cloud | Hugging Face Spaces (Docker) + Supabase free Postgres for reviews and uploads, all free tiers |
+| Tests | pytest (36 tests) |
 
 ---
 
@@ -89,7 +89,7 @@ git clone https://github.com/Emmapoky/AverisHackathon.git
 cd AverisHackathon
 pip3 install -r requirements-dev.txt
 
-cp .env.example .env                  # optional: add a free Gemini key
+cp .env.example .env                  # optional: add the team's DeepSeek key
 python3 scripts/run_batch.py          # process all 520 emails → data/results.json
 python3 -m uvicorn app.api:app --app-dir src --port 8000
 # open http://localhost:8000
@@ -115,12 +115,12 @@ python3 scripts/score.py              # organisers' scorer (needs _local/scoring
 │   ├── parsing.py     ② read txt / pdf / docx / xlsx, detect doc type, catch broken files
 │   ├── fields.py      ③ label synonyms + normalising names, ports, counts, weights
 │   ├── pipeline.py    ④ compare + decide + escalate; the step-by-step trace
-│   ├── llm.py         free-tier AI (Gemini / OpenAI-compatible), cached, rate-limited
+│   ├── llm.py         DeepSeek (or Gemini / any OpenAI-compatible), cached, retries
 │   ├── store.py       reviews + uploads: local file or Supabase
 │   └── api.py         FastAPI endpoints + serves the dashboard
 ├── src/static/        dashboard (index.html, app.js, style.css)
 ├── scripts/           run_batch.py, score.py
-├── tests/             35 tests on unseen wording, layouts and languages
+├── tests/             36 tests on unseen wording, layouts and languages
 ├── data/              organisers' synthetic dataset + results.json
 └── docs/              brief, rules, decisions, deploy guide
 ```

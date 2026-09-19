@@ -1,5 +1,8 @@
-"""Free-tier LLM access. Two provider styles, picked by env vars:
+"""LLM access. Our chosen model is DeepSeek (team account, pay-as-you-go,
+fractions of a cent per call). Picked by env vars:
 
+  LLM_PROVIDER=deepseek DEEPSEEK_API_KEY=...  (DEEPSEEK_MODEL=deepseek-chat)
+                        Text only — scanned PDFs are escalated to a person.
   LLM_PROVIDER=gemini   GEMINI_API_KEY=...   (Google AI Studio free key, no card)
                         GEMINI_MODEL=gemini-2.5-flash   (reads scanned PDFs too)
   LLM_PROVIDER=openai_compat  LLM_BASE_URL=https://api.groq.com/openai/v1
@@ -24,14 +27,21 @@ from pathlib import Path
 import requests
 
 CACHE_DIR = Path(os.environ.get("LLM_CACHE_DIR", Path(__file__).resolve().parents[2] / "data" / "llm_cache"))
-MIN_INTERVAL = float(os.environ.get("LLM_MIN_INTERVAL", "4"))  # free tiers ≈ 10–15 req/min
+MIN_INTERVAL = float(os.environ.get("LLM_MIN_INTERVAL", "0.5"))  # set ~4 for free tiers (≈10–15 req/min)
 _lock = threading.Lock()
 _last_call = 0.0
 last_error: str | None = None
 
 
+DEEPSEEK_BASE_URL = "https://api.deepseek.com"
+
+
 def provider() -> str | None:
     p = os.environ.get("LLM_PROVIDER", "").strip().lower()
+    if p == "deepseek" and os.environ.get("DEEPSEEK_API_KEY"):
+        return "deepseek"
+    if not p and os.environ.get("DEEPSEEK_API_KEY"):
+        return "deepseek"
     if p == "gemini" and os.environ.get("GEMINI_API_KEY"):
         return "gemini"
     if p == "openai_compat" and os.environ.get("LLM_BASE_URL"):
@@ -50,6 +60,8 @@ def can_read_pdf() -> bool:
 
 
 def model_name() -> str:
+    if provider() == "deepseek":
+        return os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
     if provider() == "gemini":
         return os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
     return os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile")
@@ -100,14 +112,18 @@ def _call_gemini(prompt: str, pdf_bytes: bytes | None) -> str:
 
 
 def _call_openai_compat(prompt: str) -> str:
-    base = os.environ["LLM_BASE_URL"].rstrip("/")
+    """OpenAI-style /chat/completions — DeepSeek, Groq, OpenRouter, Ollama."""
+    if provider() == "deepseek":
+        base, key = DEEPSEEK_BASE_URL, os.environ["DEEPSEEK_API_KEY"]
+    else:
+        base, key = os.environ["LLM_BASE_URL"].rstrip("/"), os.environ.get("LLM_API_KEY")
     headers = {"Content-Type": "application/json"}
-    if os.environ.get("LLM_API_KEY"):
-        headers["Authorization"] = f"Bearer {os.environ['LLM_API_KEY']}"
+    if key:
+        headers["Authorization"] = f"Bearer {key}"
     r = requests.post(f"{base}/chat/completions", headers=headers, timeout=90,
                       json={"model": model_name(), "temperature": 0,
                             "response_format": {"type": "json_object"},
-                            "messages": [{"role": "system", "content": "Reply with one JSON object only."},
+                            "messages": [{"role": "system", "content": "Reply with one valid json object only, no other text."},
                                          {"role": "user", "content": prompt}]})
     r.raise_for_status()
     return r.json()["choices"][0]["message"]["content"]

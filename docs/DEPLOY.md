@@ -1,11 +1,11 @@
-# 🚀 Deploying for free (no credit card)
+# 🚀 Deploying (free hosting + our DeepSeek key)
 
-Total cost: **RM 0**. Every service below has a free tier that doesn't ask for a card.
+Hosting and database are **free, no card**. The only paid piece is the DeepSeek API the team already topped up ($1.99 covers thousands of calls; 12 test requests cost < $0.01).
 
 | Piece | Free service | What it does |
 |---|---|---|
 | Web app (API + dashboard) | **Hugging Face Spaces** (Docker) | Public link for judges. Free CPU, stays up |
-| AI | **Google Gemini API** free tier (AI Studio key) | Unclear emails, unknown labels, scanned PDFs |
+| AI | **DeepSeek API** (`deepseek-chat`, team account) | Unclear emails, unknown labels. Scanned PDFs go to a person |
 | Database | **Supabase** free project | Saves human reviews + uploaded emails in the cloud |
 | Code | GitHub | Repo judges read |
 
@@ -13,12 +13,13 @@ Total cost: **RM 0**. Every service below has a free tier that doesn't ask for a
 
 ---
 
-## 1. Get a free Gemini key (5 min)
-1. Go to <https://aistudio.google.com/apikey>, sign in with a Google account, **Create API key**.
-2. Check which models are free today in AI Studio. Put the model name in `GEMINI_MODEL` (default `gemini-2.5-flash`).
-3. Locally: `cp .env.example .env` and paste the key into `GEMINI_API_KEY`.
+## 1. DeepSeek API key (2 min)
+1. Nandhini (account owner): <https://platform.deepseek.com/api_keys> → **Create new API key** → name it e.g. `shipcheck-demo`.
+2. Share it privately with whoever deploys (not in the repo, Discord or WhatsApp group). Locally: `cp .env.example .env` and paste it into `DEEPSEEK_API_KEY`.
+3. In DeepSeek → Usage → **turn on the balance alert** (it's currently disabled) so the key doesn't run dry during judging. If it does run out, the app falls back to rules only instead of breaking.
+4. Test it: `python3 scripts/run_batch.py --only email_001` → the first line should say `AI: deepseek-chat (deepseek)`.
 
-**Alternative (also free):** Groq (<https://console.groq.com>) with `LLM_PROVIDER=openai_compat`, `LLM_BASE_URL=https://api.groq.com/openai/v1`. Groq can't read scanned PDFs; Gemini can.
+**Free alternatives** if the balance runs out: Gemini free tier (also reads scanned PDFs; set `LLM_MIN_INTERVAL=4`) or Groq. See `.env.example`.
 
 ## 2. Create the free Supabase database (5 min)
 1. <https://supabase.com> → New project (free).
@@ -35,7 +36,7 @@ Commit the updated `data/results.json`.
 
 ## 4. Deploy to Hugging Face Spaces (10 min)
 1. <https://huggingface.co/new-space> → SDK: **Docker** → Blank → Public.
-2. Space → Settings → **Variables and secrets**: add `GEMINI_API_KEY`, `LLM_PROVIDER=gemini`, `SUPABASE_URL`, `SUPABASE_KEY` as **secrets**.
+2. Space → Settings → **Variables and secrets**: add `DEEPSEEK_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY` as **secrets**, and `LLM_PROVIDER=deepseek` as a variable.
 3. Push this repo to the Space. The Space's `README.md` must start with:
    ```yaml
    ---
@@ -60,4 +61,5 @@ Commit the updated `data/results.json`.
 ## 5. Before submitting
 - [ ] Live link loads in incognito, and "Try your own email" works
 - [ ] `/health` returns `{"ok": true, "emails": 520}`
-- [ ] No keys in the repo (`git grep -n "AIza\|sk-\|service_role"` finds nothing)
+- [ ] No keys in the repo (`git grep -nE "sk-[a-z0-9]{20}|AIza"` finds nothing)
+- [ ] DeepSeek balance alert is on, and the balance is above $1

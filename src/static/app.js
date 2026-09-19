@@ -269,7 +269,7 @@ function renderHow() {
       <div class="how-step"><b>4 · Ask a person</b>Missing file, wrong document, blank field or unreadable scan → sent to a person with the reason.</div>
     </div>
     <h3>Right now</h3>
-    <p>AI model: <b>${c.ai ? esc(c.ai_model) + " (" + esc(c.ai_provider) + ", free tier)" : "off — running on rules only"}</b> · Storage: <b>${esc(c.store)}</b></p>
+    <p>AI model: <b>${c.ai ? esc(c.ai_model) + " (" + esc(c.ai_provider) + ")" : "off — running on rules only"}</b> · Storage: <b>${esc(c.store)}</b></p>
     <div class="bars">
       ${[["Sorted by rules", by.rule || 0], ["Sorted by AI", by.llm || 0], ["Not sure (asked a person)", by.rule_low_confidence || 0]].map(([l, n]) =>
         `<div class="bar"><span>${l}</span><div class="track"><div class="fill" style="width:${(100 * n / tot).toFixed(1)}%"></div></div><span>${n}</span></div>`).join("")}

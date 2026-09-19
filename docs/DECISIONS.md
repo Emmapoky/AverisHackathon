@@ -10,6 +10,7 @@
 > |---|---|---|---|
 > | D1 | BLint | **ShipCheck** (working name; change with `APP_NAME`) | "BLint" too jargony for the judges; pick a final simple name as a team |
 > | D8 | Claude API (paid) | **Google Gemini free tier** (AI Studio key, no card), or Groq / Ollama | Must be free. Gemini also reads scanned PDFs. The app still works with **no key** (rules only) |
+> | D8 (again) | Gemini free tier | **DeepSeek API (`deepseek-chat`)** | The team bought DeepSeek credit ($1.99 covers thousands of calls; 12 test calls < $0.01). No tight rate limit, so a live demo can't stall the way free tiers can. Only gap: it can't read scanned PDFs, so those go to a person (what the organisers expect anyway). Gemini/Groq stay as free backups in `.env` |
 > | D10 | FastAPI + Next.js | **FastAPI + plain HTML/JS dashboard** (no build step) | Built and working now; one container, nothing to learn |
 > | D11 | Cloud Run + Vercel + Supabase | **Hugging Face Spaces (Docker) + Supabase free** | Cloud Run needs a card; HF Spaces is free, no card, and doesn't sleep like Render |
 >
