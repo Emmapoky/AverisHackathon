@@ -1,0 +1,13 @@
+.git
+_local
+.venv
+.env
+.env.*
+**/__pycache__
+.pytest_cache
+data/reviews.json
+data/processed_extra.json
+data/uploads
+submission*.json
+docs
+tests

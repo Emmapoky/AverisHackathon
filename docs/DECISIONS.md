@@ -4,6 +4,17 @@
 > These are recommendations, not orders. If the team disagrees, change the decision and write the new reason in the Decisions Log.
 > Team: Erwyna · Nandhini · Charvhi · Riely · Taabish · Deadline **Mon 22 Sep, 12:00 PM**
 
+
+> ## 🔄 Updated 19 Sep, after building: everything must be **completely FREE**
+> | # | Was | Now | Why |
+> |---|---|---|---|
+> | D1 | BLint | **ShipCheck** (working name; change with `APP_NAME`) | "BLint" too jargony for the judges; pick a final simple name as a team |
+> | D8 | Claude API (paid) | **Google Gemini free tier** (AI Studio key, no card), or Groq / Ollama | Must be free. Gemini also reads scanned PDFs. The app still works with **no key** (rules only) |
+> | D10 | FastAPI + Next.js | **FastAPI + plain HTML/JS dashboard** (no build step) | Built and working now; one container, nothing to learn |
+> | D11 | Cloud Run + Vercel + Supabase | **Hugging Face Spaces (Docker) + Supabase free** | Cloud Run needs a card; HF Spaces is free, no card, and doesn't sleep like Render |
+>
+> **Status:** working prototype in the repo. **100%** on the organisers' scorer, 35 tests pass. See the repo README and `docs/DEPLOY.md`.
+
 ---
 
 ## 📌 The whole plan in one table

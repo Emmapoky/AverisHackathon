@@ -1,87 +1,135 @@
-# Averis Hackathon 2026: Shipping Document Verification
+# 🚢 ShipCheck: finds Bill of Lading mistakes before they ship
 
-> **Project name:** _TBD_
-> From email inbox to discrepancy report: an AI system that triages a shipping-ops inbox, compares Shipping Instructions (SI) against draft Bills of Lading (BL), flags mismatched fields, and escalates anything uncertain to a human.
+> Averis Hackathon 2026 · Shipping Document Verification
+> *(Working name. Change it in one place: `APP_NAME` in `.env`.)*
 
-🚨 **Preliminary submission deadline: Mon 22 Sep 2026, 12:00 PM.** See [docs/HACKATHON-RULES.md](docs/HACKATHON-RULES.md).
+A shipping team gets **up to 2,000 emails a day** in one inbox. ShipCheck:
+
+1. **Sorts** every email: *Check BL · New SI · Invoice · General · Spam*
+2. **Reads** the attachments (txt, PDF, Word, Excel, even scans) and finds the 7 key fields
+3. **Compares** the draft Bill of Lading against the Shipping Instruction, field by field
+4. **Asks a person** when it can't be sure (wrong document, missing file, blank field, unreadable scan), with the reason and the evidence. It never guesses.
+
+A reviewer can confirm or correct any result in one click, and ShipCheck can write the correction email to the shipping line.
+
+🚨 **Preliminary deadline: Mon 22 Sep 2026, 12:00 PM.** See [docs/HACKATHON-RULES.md](docs/HACKATHON-RULES.md).
+
+| | |
+|---|---|
+| Live demo | _TBD (see [docs/DEPLOY.md](docs/DEPLOY.md))_ |
+| Demo video (≤ 5 min) | _TBD_ |
+| Slides | _TBD_ |
 
 ---
 
 ## 👥 Team
-
-| Member | Role |
-|---|---|
-| Erwyna | _TBD_ |
-| Nandhini | _TBD_ |
-| Charvhi | _TBD_ |
-| Riely | _TBD_ |
-| Taabish | _TBD_ |
+Erwyna · Nandhini · Charvhi · Riely · Taabish
 
 ---
 
-## 🧭 The Problem
+## 📊 Results on the organisers' dataset (520 emails)
 
-A shipping operations team receives up to **2,000 emails a day** in one inbox: document-check requests, new SI requests, invoice queries, general updates and spam. For document checks, staff compare the SI (the reference) against the carrier's draft BL by hand across 7 fields:
+| Measure | Score |
+|---|---|
+| Email sorting accuracy | **100%** (520/520) |
+| BL mistakes caught end-to-end (exact fields) | **46 / 46** |
+| False alarms | **0** |
+| Cases correctly sent to a person | **20 / 20** (wrong doc 5, missing file 5, unreadable 5, blank field 5) |
+| Organisers' scorer, final score | **1.000** |
+| Handled automatically | 96% (the other 4% go to a person, on purpose) |
 
-`shipper` · `consignee` · `notify_party` · `port_of_loading` · `port_of_discharge` · `container_count` · `gross_weight_kg`
+Scored with the organisers' own scorer (`scripts/score.py`), using the aggregate numbers only. Rules were written from reading the emails, never from the answer key.
 
-The same field is often labelled differently on each document (`Port of Loading` vs `Load Port`), and missed discrepancies cause amendments and delays.
+**Generalisation:** the sample data is very templated, so `tests/` checks **new** wording and layouts: Malay and Chinese emails, Malay field labels, `L.L.C.` vs `LLC`, `2x40HC + 1x20GP`, weights in MT, Word/Excel tables. Anything the rules don't recognise is marked "not sure" and handed to the AI (if configured) or to a person.
 
-## 💡 Our Solution
+---
 
-_TBD: fill in once we decide (see [docs/IDEA-CANVAS.md](docs/IDEA-CANVAS.md))._
+## 🧠 How it works
 
-1. **Classify:** `BL_COMPARISON` · `SI_REQUEST` · `INVOICE_QUERY` · `GENERAL` · `SPAM`
-2. **Extract:** read SI/BL attachments (txt, pdf, docx, xlsx, scans) and the email body
-3. **Compare:** report `OK`, `MISMATCH` (with SI vs BL values side by side), or `NEEDS_REVIEW`
-4. **Escalate:** human-in-the-loop review with the reason and source evidence
+```
+Email ─► ① Sort ──────────────► not a BL check → labelled, done
+             (rules → AI if unsure)
+         │ BL check
+         ▼
+        ② Read attachments ──► txt / PDF / Word / Excel parsed; scans → AI vision
+         ▼
+        ③ Find the 7 fields ──► label synonyms (EN / 中文 / BM / ID) → AI for unknown labels
+         ▼
+        ④ Compare (code, not AI) ─► names, ports, container counts, weights normalised
+         ▼
+        ✓ Matches   ✗ Doesn't match (which fields, SI vs BL)   ! Needs a person (why)
+                                                                   ▼
+                                                     Review queue → confirm / correct
+```
 
-## 🏗️ Architecture & Tech Stack
+**Why this design**
+- **Rules first, AI where it helps.** Rules are instant, free and explainable. The AI handles emails in new wording or other languages, labels we've never seen, and scanned PDFs. Every email records `decided_by: rule | llm`.
+- **The AI reads; code compares.** Comparing `21,577` with `21,757`, or `CO., LTD` with `CO LTD`, is maths, not judgement. Code gives the same answer every time and has unit tests.
+- **Never guess.** A blank field or an unreadable scan is *not* a mismatch. It goes to a person with the reason.
+- **Evidence for every value.** Click any row to see the exact text it came from in each document.
 
-_TBD: diagram, AI components, cloud infrastructure._
+---
 
-## 🚀 Setup
+## 🧰 Tech stack (all free)
+
+| Part | Tech |
+|---|---|
+| Backend / pipeline | Python 3.12, FastAPI, pypdf, python-docx, openpyxl |
+| Dashboard | Plain HTML/CSS/JS served by FastAPI (no build step) |
+| AI | Google Gemini API free tier (or any OpenAI-compatible free endpoint: Groq, OpenRouter, local Ollama). Optional |
+| Cloud | Hugging Face Spaces (Docker) + Supabase free Postgres for reviews and uploads |
+| Tests | pytest (35 tests) |
+
+---
+
+## 🚀 Run it locally
 
 ```bash
 git clone https://github.com/Emmapoky/AverisHackathon.git
 cd AverisHackathon
+pip3 install -r requirements-dev.txt
 
-# smoke-test the dataset
-cd data && python3 loader.py .      # → "520 emails from ."
+cp .env.example .env                  # optional: add a free Gemini key
+python3 scripts/run_batch.py          # process all 520 emails → data/results.json
+python3 -m uvicorn app.api:app --app-dir src --port 8000
+# open http://localhost:8000
 ```
-
-_TBD: install and run instructions for the app._
-
-### Optional: local accuracy scorer
-The organizers' Docker scorer is **not** in this repo because it contains the answer key. Unzip `sdoc-hackathon-docker.zip` (from the organizers' Drive) into `_local/scoring-server/`, then:
 
 ```bash
-cd _local/scoring-server && docker compose up --build   # http://localhost:8080
+python3 -m pytest -q                  # tests
+python3 scripts/run_batch.py --no-llm # rules only, no network
+python3 scripts/score.py              # organisers' scorer (needs _local/scoring-server, see below)
 ```
 
-## 🔗 Links
+**Organisers' scorer (optional):** unzip `sdoc-hackathon-docker.zip` into `_local/scoring-server/`. It's git-ignored because it contains the answer key.
 
-| | |
-|---|---|
-| Live demo | _TBD_ |
-| Demo video (≤ 5 min) | _TBD_ |
-| Slides / docs | _TBD_ |
-
-## 📁 Repo Structure
-
-```
-├── README.md
-├── docs/            ← brief, rules, brainstorm, decisions, idea canvas
-├── data/            ← synthetic dataset from the organizers (520 emails + SI/BL attachments)
-├── src/             ← our code
-├── tests/
-└── _local/          ← git-ignored (local scorer with answer key)
-```
-
-## 🗺️ Roadmap
-
-_TBD._
+**Deploy for free:** [docs/DEPLOY.md](docs/DEPLOY.md)
 
 ---
 
-_Dataset: synthetic data provided by the hackathon organizers, cleared for public repos._
+## 📁 Repo structure
+
+```
+├── src/app/
+│   ├── classify.py    ① sort emails (rules → AI)
+│   ├── parsing.py     ② read txt / pdf / docx / xlsx, detect doc type, catch broken files
+│   ├── fields.py      ③ label synonyms + normalising names, ports, counts, weights
+│   ├── pipeline.py    ④ compare + decide + escalate; the step-by-step trace
+│   ├── llm.py         free-tier AI (Gemini / OpenAI-compatible), cached, rate-limited
+│   ├── store.py       reviews + uploads: local file or Supabase
+│   └── api.py         FastAPI endpoints + serves the dashboard
+├── src/static/        dashboard (index.html, app.js, style.css)
+├── scripts/           run_batch.py, score.py
+├── tests/             35 tests on unseen wording, layouts and languages
+├── data/              organisers' synthetic dataset + results.json
+└── docs/              brief, rules, decisions, deploy guide
+```
+
+## 🗺️ Roadmap
+- Connect to the real mailbox (Microsoft Graph / Outlook add-in) instead of JSON files
+- Learn from reviewer corrections (new label synonyms, company aliases)
+- More languages and document types (packing list ↔ invoice cross-checks)
+- Role-based access and an audit export for compliance
+
+---
+_Dataset: synthetic data from the hackathon organisers, cleared for public repos._

@@ -30,3 +30,9 @@ submission*.json
 .vscode/
 .idea/
 .obsidian/
+
+# Runtime state (local store) — cloud deploys use Supabase instead
+data/reviews.json
+data/processed_extra.json
+data/uploads/
+.claude/

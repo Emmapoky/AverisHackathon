@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShipCheck</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚢</text></svg>">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">🚢</span><span id="app-name">ShipCheck</span>
+      <span class="tagline">Finds the Bill of Lading mistakes before they ship</span></div>
+    <nav class="tabs">
+      <a href="#/inbox" data-tab="inbox">Inbox</a>
+      <a href="#/queue" data-tab="queue">Needs a person <span id="queue-count" class="pill pill-amber">0</span></a>
+      <a href="#/new" data-tab="new">Try your own email</a>
+      <a href="#/how" data-tab="how">How it works</a>
+    </nav>
+    <div id="ai-status" class="ai-status"></div>
+  </header>
+
+  <main id="app">
+    <section id="stats" class="stats"></section>
+
+    <section id="view-list" class="split">
+      <div class="list-pane">
+        <div class="filters">
+          <input id="search" type="search" placeholder="Search subject, sender or ID…" aria-label="Search">
+          <div id="cat-chips" class="chips"></div>
+          <div id="status-chips" class="chips"></div>
+        </div>
+        <div id="list" class="list" role="list"></div>
+      </div>
+      <div id="detail" class="detail-pane">
+        <div class="empty">Pick an email on the left to see what the system found.</div>
+      </div>
+    </section>
+
+    <section id="view-new" class="card narrow" hidden>
+      <h2>Try your own email</h2>
+      <p class="muted">Paste an email and attach a Shipping Instruction and a draft Bill of Lading (txt, pdf, docx or xlsx). The system checks it live.</p>
+      <div class="examples">Quick examples:
+        <button class="btn btn-ghost" data-example="malay">Malay email</button>
+        <button class="btn btn-ghost" data-example="invoice">Invoice question</button>
+        <button class="btn btn-ghost" data-example="spam">Spam</button>
+      </div>
+      <form id="new-form">
+        <label>From <input name="sender" value="customer@example.com"></label>
+        <label>Subject <input name="subject" required placeholder="e.g. TO CONFIRM DOCS _ 5RSG-00133 _ CALLAO_PERU"></label>
+        <label>Email text <textarea name="body" rows="6" placeholder="Hi, attached are the SI and draft BL. Please check and confirm."></textarea></label>
+        <label>Attachments <input name="files" type="file" multiple accept=".txt,.pdf,.docx,.xlsx"></label>
+        <button class="btn btn-primary" type="submit">Check this email</button>
+        <span id="new-status" class="muted"></span>
+      </form>
+    </section>
+
+    <section id="view-how" class="card narrow" hidden></section>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="modal-box">
+      <button class="modal-close" aria-label="Close">×</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
