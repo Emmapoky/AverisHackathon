@@ -34,27 +34,25 @@ python3 scripts/score.py              # optional: saves accuracy numbers for the
 ```
 Commit the updated `data/results.json`.
 
-## 4. Deploy to Hugging Face Spaces (10 min)
-1. <https://huggingface.co/new-space> → SDK: **Docker** → Blank → Public.
-2. Space → Settings → **Variables and secrets**: add `DEEPSEEK_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY` as **secrets**, and `LLM_PROVIDER=deepseek` as a variable.
-3. Push this repo to the Space. The Space's `README.md` must start with:
-   ```yaml
-   ---
-   title: ShipCheck
-   emoji: 🚢
-   colorFrom: blue
-   colorTo: green
-   sdk: docker
-   app_port: 7860
-   ---
+## 4. Deploy to Hugging Face Spaces (10 min, one command)
+1. Make a free account at <https://huggingface.co/join>.
+2. Create a token: <https://huggingface.co/settings/tokens> → **Create new token** → type **Write** → copy it (`hf_...`).
+3. Put both keys in your local `.env` (never commit it):
    ```
-   Easiest: keep GitHub as the main repo and push to the Space as a second remote:
+   DEEPSEEK_API_KEY=sk-...
+   HF_TOKEN=hf_...
+   ```
+4. Deploy:
    ```bash
-   git remote add space https://huggingface.co/spaces/<user>/<space-name>
-   git push space main
+   python3 scripts/deploy_hf.py --dry-run     # check the file list first
+   python3 scripts/deploy_hf.py               # creates <you>/shipcheck and uploads
    ```
-   (Add the YAML block above to the top of README.md first, or on a separate `hf` branch you push with `git push space hf:main`.)
-4. The link is `https://<user>-<space-name>.hf.space`. **Open it in an incognito window** to check it works for judges.
+   It creates the Space, saves the DeepSeek key as a **Space secret** (read from `.env`, not typed anywhere else), uploads the app and dataset, and adds the Space header to the Space's README only. Plain `git push` to a Space fails on the PDF/Word/Excel files unless you set up git-lfs; this script avoids that.
+5. Wait 3–5 min for the build (watch the **Logs** tab on the Space page). Your link: `https://<user>-shipcheck.hf.space`.
+6. **Open it in an incognito window** to check it works for judges.
+7. After code changes, run `python3 scripts/deploy_hf.py` again to update.
+
+**Adding or changing the key by hand instead:** Space page → **Settings** → **Variables and secrets** → **New secret** → name `DEEPSEEK_API_KEY`, value `sk-...` → Save. Add a **New variable** `LLM_PROVIDER` = `deepseek`. The Space restarts by itself.
 
 **Backup host:** Render (<https://render.com>) → New Web Service → from GitHub → Docker. Free, but it sleeps after 15 min idle (~50 s to wake). Hugging Face is the better option for judging.
 
