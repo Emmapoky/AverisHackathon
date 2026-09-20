@@ -1,7 +1,7 @@
 """LLM access. Our chosen model is DeepSeek (team account, pay-as-you-go,
 fractions of a cent per call). Picked by env vars:
 
-  LLM_PROVIDER=deepseek DEEPSEEK_API_KEY=...  (DEEPSEEK_MODEL=deepseek-chat)
+  LLM_PROVIDER=deepseek DEEPSEEK_API_KEY=...  (DEEPSEEK_MODEL=deepseek-flash)
                         Text only. If GEMINI_API_KEY is also set, Gemini's free
                         tier reads scanned PDFs (vision) — DeepSeek does the rest.
   LLM_PROVIDER=gemini   GEMINI_API_KEY=...   (Google AI Studio free key, no card)
@@ -72,7 +72,7 @@ def gemini_model() -> str:
 
 def model_name() -> str:
     if provider() == "deepseek":
-        return os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+        return os.environ.get("DEEPSEEK_MODEL", "deepseek-flash")
     if provider() == "gemini":
         return gemini_model()
     return os.environ.get("LLM_MODEL", "llama-3.3-70b-versatile")
