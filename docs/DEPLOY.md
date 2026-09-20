@@ -5,7 +5,7 @@ already topped up ($1.99 covers thousands of calls; 12 test requests cost < $0.0
 
 | Piece | Free service | What it does |
 |---|---|---|
-| Web app (API + dashboard) | **Vercel** (FastAPI preset) | Public link for judges. Deploys from GitHub on every push |
+| Web app (API + dashboard) | **Render** (Docker) | Public link for judges. Rebuilds from GitHub on every push |
 | AI | **DeepSeek API** (`deepseek-chat`, team account) | Unclear emails, unknown labels |
 | Scanned PDFs | **Gemini** free tier (`gemini-flash-latest`) | Reads image-only PDFs that DeepSeek can't |
 | Database | **Supabase** free project | Saves human reviews + uploaded emails in the cloud |
@@ -62,7 +62,16 @@ only — tests assert the submitted answer is identical with it on or off — bu
 DeepSeek call per mismatch (46 on this dataset), so leave it off for quick reruns.
 Commit the updated `data/results.json`.
 
-## 4. Deploy to Vercel (5 min, from GitHub)
+## 4. Deploy to Render (what the live site actually uses)
+
+<https://render.com> -> New Web Service -> connect the GitHub repo -> Docker.
+Add the same environment variables listed below. Render rebuilds on every push
+to `main`. The free tier sleeps after 15 minutes idle and takes about 50 seconds
+to wake, so open the link once before judging starts.
+
+---
+
+## 4b. Deploy to Vercel instead (backup, also works)
 
 Vercel runs the **same** FastAPI app — dashboard and API together, one URL. The catch is
 that it is *serverless*, not an always-on server:

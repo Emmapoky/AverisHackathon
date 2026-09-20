@@ -18,8 +18,8 @@ A reviewer can confirm or correct any result in one click, and ShipCheck can wri
 
 | | |
 |---|---|
-| Live demo | _TBD (see [docs/DEPLOY.md](docs/DEPLOY.md))_ |
-| Demo video (≤ 5 min) | _TBD_ |
+| Live demo | <https://averishackathon.onrender.com> |
+| Demo video (≤ 5 min) | <https://youtu.be/1er9j997aMw> |
 | Slides | [Team deck template](docs/slides/ShipCheck-team-deck-template.pptx) |
 
 ---
@@ -79,8 +79,20 @@ Email ─► ① Sort ──────────────► not a BL che
 | Backend / pipeline | Python 3.12, FastAPI, pypdf, python-docx, openpyxl |
 | Dashboard | Plain HTML/CSS/JS served by FastAPI (no build step) |
 | AI | **DeepSeek API** (`deepseek-chat`) when rules aren't sure · **Gemini free tier** reads scanned PDFs · both optional, set in `.env` |
-| Cloud | **Vercel** (FastAPI, deploys from GitHub) + **Supabase** free Postgres for reviews and uploads, all free tiers |
+| Cloud | **Render** (Docker, deploys from GitHub) + **Supabase** free Postgres for reviews and uploads, all free tiers |
 | Tests | pytest (100 tests) |
+
+---
+
+## ☁️ How it is deployed
+
+The live site runs the `Dockerfile` on **Render**, rebuilt from GitHub on every
+push to `main`. Reviews and uploaded emails are saved to **Supabase**, so they
+survive a restart. The AI keys are set as environment variables on Render, and
+the app falls back to rules only if they are missing.
+
+A Vercel setup is also in the repo (`api/index.py` and `vercel.json`) and works,
+but Render was simpler because the project already had a Dockerfile.
 
 ---
 
@@ -150,9 +162,9 @@ Activate the environment by hand if you prefer: `source .venv/bin/activate`
 │   ├── store.py       reviews + uploads: local file or Supabase
 │   └── api.py         FastAPI endpoints + serves the dashboard
 ├── src/static/        dashboard (index.html, app.js, style.css)
-├── api/index.py       Vercel entry point (serves the same app, /tmp for writes)
-├── vercel.json        routes every path to the function, bundles data/ + src/
-├── Dockerfile         backup host (Render / any container host)
+├── Dockerfile         how the live site runs on Render
+├── api/index.py       alternative entry point for Vercel (/tmp for writes)
+├── vercel.json        Vercel config, kept as a backup host
 ├── scripts/           setup + start (.sh and .ps1), run_batch.py, score.py, check_supabase.py
 ├── tests/             100 tests on unseen wording, layouts and languages (incl. tests/test_stress.py)
 ├── data/              organisers' synthetic dataset + results.json
@@ -176,7 +188,7 @@ command and deploys as a single function.
 | `src/app/llm.py` | Talks to DeepSeek and Gemini, with caching and rate limiting |
 | `src/app/store.py` | Saves human reviews to Supabase, or to a local file if Supabase is not set up |
 | `src/app/api.py` | The HTTP endpoints, and serves the dashboard files |
-| `api/index.py` | Entry point used by Vercel only |
+| `api/index.py` | Alternative entry point, used only if deploying to Vercel |
 
 When the page loads, the browser calls `/api/config`, `/api/summary` and
 `/api/emails`. Results for the 520 sample emails are worked out ahead of time by
@@ -217,8 +229,9 @@ shown to the user but never changes the result, and four tests check that the
 submitted output is identical whether it runs or not.
 
 **Storage.** Human reviews go to Supabase when its keys are set, and to a local
-JSON file otherwise. This matters on Vercel, where the filesystem is read only
-and anything written to disk disappears between requests.
+JSON file otherwise. Supabase is what makes a review survive, because most free
+hosts either restart the container or give you a read only filesystem, so
+anything written to disk is lost.
 
 **Testing.** 100 tests in two suites. `tests/test_pipeline.py` covers the
 pipeline end to end, and `tests/test_stress.py` holds emails and documents
@@ -253,14 +266,16 @@ tolerance came from.
 
 **Hugging Face stopped being free.** It was our hosting plan, and a deploy
 script was already written for it, but it began requiring a paid subscription to
-run a Space. We moved to Vercel, which meant adapting to a read only filesystem
-and to instances that are thrown away between requests.
+run a Space. We tried Vercel next, which meant adapting to a read only
+filesystem and to instances thrown away between requests, and in the end we
+deployed the Docker image to Render instead. The app now runs on any container
+host, and the Vercel config is still in the repo as a backup.
 
-**Vercel created our environment variables empty.** It read the names from
+**A host created our environment variables empty.** It read the names from
 `.env.example` and left the values blank, so `float("")` crashed the app at
 import and every route returned an error with no explanation. Blank values are
-now treated as missing, and the deployment reports what is wrong instead of
-failing silently.
+now treated as missing, and the app reports what is wrong instead of failing
+silently.
 
 ---
 
