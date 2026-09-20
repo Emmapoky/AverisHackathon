@@ -83,6 +83,21 @@ def _fill_with_llm(doc: ParsedDoc, fields: dict, trace: Trace, role: str):
     trace.add("Extract fields (AI)", "ok", f"{role}: AI found {', '.join(got) or 'nothing new'} for labels the rules didn't recognise", t0)
 
 
+# Weights can arrive in different units, and converting pounds to kilograms does
+# not land on a round number, so exact equality would report a defect on two
+# documents that say the same thing. The smallest genuine weight defect in the
+# organisers' data is 0.233% (500 kg on 214,270), and no matching pair differs
+# numerically at all — so 0.01% absorbs conversion rounding with a 20x margin
+# below anything real.
+WEIGHT_TOLERANCE = 1e-4
+
+
+def _same_value(field: str, a, b) -> bool:
+    if field == "gross_weight_kg" and isinstance(a, (int, float)) and isinstance(b, (int, float)):
+        return a == b or abs(a - b) <= WEIGHT_TOLERANCE * max(abs(a), abs(b))
+    return a == b
+
+
 def compare_fields(si: dict, bl: dict) -> list[dict]:
     rows = []
     for f in FIELDS:
@@ -102,7 +117,7 @@ def compare_fields(si: dict, bl: dict) -> list[dict]:
             if ns is None or nb is None:
                 row["note"] = "Could not read the value"
             else:
-                row["match"] = ns == nb
+                row["match"] = _same_value(f, ns, nb)
                 if row["match"] and display_value(f, s_val).upper() != display_value(f, b_val).upper():
                     row["note"] = "Same value, different formatting"
         rows.append(row)

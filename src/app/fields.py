@@ -121,13 +121,18 @@ def norm_party(value: str) -> str:
     for pat, rep in _SUFFIXES:
         name = re.sub(pat, rep, name)
     name = name.replace(".", "")                  # L.L.C. → LLC, PTE. → PTE
+    name = name.replace("/", "")                  # A/S → AS (Danish), M/S → MS
     name = re.sub(r"[^A-Z0-9 ]+", " ", name)
     return re.sub(r"\s+", " ", name).strip()
 
 
 _PORT_ALIASES = {"HO CHI MINH": "HOCHIMINH", "HO CHI MINH CITY": "HOCHIMINH", "HOCHIMINH CITY": "HOCHIMINH",
                  "SAIGON": "HOCHIMINH", "NHAVA SHEVA": "NHAVASHEVA", "JAWAHARLAL NEHRU": "NHAVASHEVA",
-                 "PORT KELANG": "PORT KLANG"}
+                 "PORT KELANG": "PORT KLANG",
+                 # official name vs the name everyone actually writes
+                 "JNPT": "NHAVASHEVA", "JAWAHARLAL NEHRU PORT": "NHAVASHEVA",
+                 # romanisation variants of the same port
+                 "PUSAN": "BUSAN", "KEELUNG": "JILONG", "DALIAN": "DALIEN"}
 
 
 def norm_port(value: str) -> str:
@@ -149,16 +154,27 @@ def parse_container_count(value: str) -> int | None:
     return int(m.group(1)) if m else None
 
 
+LB_TO_KG = 0.45359237
+
+
 def parse_weight_kg(value) -> float | None:
     if isinstance(value, (int, float)):
         return float(value)
     v = str(value).upper().replace(",", "")
-    m = re.search(r"(\d+(?:\.\d+)?)\s*(KGS?|KILO|MT|MTS|TONNES?|TONS?)?", v)
+    # A space can be a thousands separator ("55 200 KG" is European for 55,200).
+    # Without this the regex stops at "55" and reads 55 kg — a 1000x error that
+    # would report a mismatch against an identical weight written differently.
+    v = re.sub(r"(?<=\d)[\s\u00a0](?=\d{3}(?:\D|$))", "", v)
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(KGS?|KILO(?:GRAMS?)?|MT|MTS|TONNES?|TONS?|LBS?|POUNDS?)?", v)
     if not m:
         return None
     num = float(m.group(1))
     unit = m.group(2) or "KG"
-    return num * 1000 if unit.startswith(("MT", "TON")) else num
+    if unit.startswith(("MT", "TON")):
+        return num * 1000
+    if unit.startswith(("LB", "POUND")):
+        return num * LB_TO_KG
+    return num
 
 
 def normalise(fname: str, value: str):
