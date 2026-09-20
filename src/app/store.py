@@ -29,11 +29,11 @@ class LocalStore:
         self.extra_path = DATA / "processed_extra.json"
 
     def _read(self, p: Path) -> dict:
-        return json.loads(p.read_text()) if p.exists() else {}
+        return json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
 
     def _write(self, p: Path, d: dict):
         with _lock:
-            p.write_text(json.dumps(d, indent=1, ensure_ascii=False))
+            p.write_text(json.dumps(d, indent=1, ensure_ascii=False), encoding="utf-8")
 
     def reviews(self) -> dict:
         return self._read(self.reviews_path)

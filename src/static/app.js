@@ -229,7 +229,9 @@ $("#modal").addEventListener("click", (e) => { if (e.target.id === "modal" || e.
 // ---------------------------------------------------------------- new email
 const EXAMPLES = {
   malay: { sender: "ops@pelanggan.com.my", subject: "Semakan draf BL untuk OC 5RSG-00133",
-    body: "Salam,\n\nDilampirkan SI dan draf BL untuk OC 5RSG-00133. Sila semak draf BL berbanding SI dan maklumkan jika ada percanggahan.\n\nTerima kasih." },
+    body: "Salam,\n\nDilampirkan arahan penghantaran dan draf bil muatan untuk OC 5RSG-00133. Sila semak draf bil muatan dan sahkan bahawa butirannya sepadan dengan arahan penghantaran. Maklumkan jika ada percanggahan.\n\nTerima kasih." },
+  chinese: { sender: "operations@customer.cn", subject: "请审核提单草稿 OC 5RSG-00133",
+    body: "您好，\n\n附件中是装运指示和提单草稿。请比较提单和装运指示，并确认所有信息是否相符。如有差异，请告知。\n\n谢谢。" },
   invoice: { sender: "finance@customer.com", subject: "Question about our last bill",
     body: "Hi team,\n\nWe were charged twice for port handling on invoice 5250071354. Could you check and send a corrected bill?\n\nThanks" },
   spam: { sender: "rewards@lucky-winner.biz", subject: "You are our lucky shipper!", body: "Congratulations! You have won a free container. Claim your prize now at http://free-container.win" },
@@ -303,8 +305,10 @@ async function route() {
   $("#view-how").hidden = state.view !== "how";
   if (state.view === "inbox" || state.view === "queue") {
     await loadList();
-    if (id) openEmail(decodeURIComponent(id));
-    else if (state.rows[0] && !state.sel) openEmail(state.rows[0].email_id);
+    if (id) await openEmail(decodeURIComponent(id));
+    else if (state.rows[0] && !state.rows.some((row) => row.email_id === state.sel)) {
+      await openEmail(state.rows[0].email_id);
+    }
   }
   if (state.view === "how") { await loadStats(); renderHow(); }
 }

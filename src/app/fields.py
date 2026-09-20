@@ -20,13 +20,13 @@ FIELD_LABELS = {
 # Ordered: first match wins. "Notify Party/Intermediate Consignee" must hit
 # notify before consignee; "Shipper (Principal or Seller)" must hit shipper.
 FIELD_PATTERNS: list[tuple[str, str]] = [
-    ("notify_party", r"notify|通知人|pihak (yang )?dimaklum|pihak pemberitahuan"),
-    ("consignee", r"consignee|to the order of|收货人|penerima"),
-    ("shipper", r"shipper|exporter|发货人|pengirim|pengeksport"),
-    ("port_of_loading", r"port of loading|load(ing)? port|\bpol\b|port of shipment|装货港|pelabuhan muat"),
-    ("port_of_discharge", r"port of discharge|discharge port|\bpod\b|port of destination|卸货港|pelabuhan (bongkar|pemunggahan)"),
-    ("container_count", r"no\.? of containers|container count|total containers|number of containers|containers? qty|箱数|jumlah kontainer|bilangan kontena"),
-    ("gross_weight_kg", r"gross\s*w|毛重|berat kasar|berat kotor"),
+    ("notify_party", r"notify|通知人|通知方|pihak (yang )?dimaklum|pihak pemberitahuan|pihak untuk dihubungi"),
+    ("consignee", r"consignee|to the order of|收货人|收件人|提货人|penerima|penerima (kiriman|barang)"),
+    ("shipper", r"shipper|exporter|发货人|托运人|出口商|pengirim|pengeksport|pihak penghantar|penghantar barang"),
+    ("port_of_loading", r"port of loading|load(ing)? port|\bpol\b|port of shipment|装货港|起运港|始发港|pelabuhan (muat|pemuatan|asal)"),
+    ("port_of_discharge", r"port of discharge|discharge port|\bpod\b|port of destination|卸货港|目的港|到达港|pelabuhan (bongkar|pemunggahan|destinasi)"),
+    ("container_count", r"no\.? of containers|container count|total containers|number of containers|containers? qty|箱数|集装箱数量|货柜数量|jumlah (kontainer|kontena)|bilangan kontena|kuantiti kontena"),
+    ("gross_weight_kg", r"gross\s*w|毛重|总毛重|berat kasar|berat kotor|jumlah berat kasar"),
 ]
 
 # Labels we recognise but deliberately don't compare.
