@@ -240,6 +240,9 @@ def test_deepseek_request_shape(monkeypatch, tmp_path):
     monkeypatch.undo()                          # use the real llm.available()
     monkeypatch.setenv("LLM_PROVIDER", "deepseek")
     monkeypatch.setenv("DEEPSEEK_API_KEY", "test-key")
+    # pin the model here: without this the test reads the developer's own .env and
+    # fails the moment the team switches models (deepseek-chat -> deepseek-flash).
+    monkeypatch.setenv("DEEPSEEK_MODEL", "deepseek-chat")
     monkeypatch.setenv("LLM_CACHE_DIR", str(tmp_path))
     mod = importlib.reload(llm)
     sent = {}

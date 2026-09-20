@@ -614,7 +614,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_005_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 291
+    "ms": 69
    },
    {
     "step": "Read document",
@@ -1222,7 +1222,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The port of discharge differs: Mombasa, Kenya versus Tuticorin, India, so the customer must correct it.",
-    "ms": 1638
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -1826,7 +1826,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both the discharge port and container count differ materially and need correction.",
-    "ms": 1298
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -2202,7 +2202,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The draft B/L shows a different container count and gross weight than the Shipping Instruction, so both need correction.",
-    "ms": 1103
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -3234,7 +3234,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The container count differs: the instruction says 3 x 20'GP but the draft Bill of Lading says 5 x 20'GP.",
-    "ms": 963
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -3644,7 +3644,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The notify party is a completely different company (TOPKOPY MIDDLE EAST FZE vs MOORIM SP CO., LTD), so the customer must correct it.",
-    "ms": 1062
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -4409,7 +4409,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_055_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 31
+    "ms": 29
    },
    {
     "step": "Verify",
@@ -4976,7 +4976,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_059_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 63
+    "ms": 39
    },
    {
     "step": "Read document",
@@ -5519,7 +5519,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The draft BL names a different notify party (HABRAS INTERNATIONAL LIMITED) and a different port of discharge (BUSAN, SOUTH KOREA) than the Shipping Instruction, so both are genuine errors the customer must correct.",
-    "ms": 1611
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -6044,7 +6044,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The discharge port and container count are genuinely different, so the customer would need to correct them.",
-    "ms": 1962
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -7233,7 +7233,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The Shipping Instruction states 3 x 40'HC containers while the draft Bill of Lading states 2 x 40'HC, so the container count genuinely differs and needs correcting.",
-    "ms": 1215
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -7746,13 +7746,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_097_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 1
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_097_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -7764,7 +7764,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both flagged items are genuine mismatches: the container count differs (10 vs 11) and the gross weights differ by 1,000 kg (216,950 vs 215,950), so the customer should correct them.",
-    "ms": 2070
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -8278,13 +8278,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_107_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 6
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_107_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 8
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -8296,7 +8296,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both flagged differences are real: the consignee names differ and the container count is 2 versus 3.",
-    "ms": 1928
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -8605,7 +8605,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The container count differs (4 x 20'GP vs 3 x 20'GP), which is a genuine discrepancy the customer must correct.",
-    "ms": 1075
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -9344,7 +9344,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The loading port is genuinely different: Shipping Instruction says Port Klang, Malaysia, while the draft Bill of Lading says Singapore, Singapore.",
-    "ms": 2092
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -9575,7 +9575,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The gross weight differs by 500 kg, which is a real discrepancy the customer must correct.",
-    "ms": 979
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -9987,7 +9987,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both flagged fields are real discrepancies: the load port differs (Nhava Sheva, India vs Buatan, Indonesia) and the gross weight differs by 1,000 kg.",
-    "ms": 1840
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -10183,7 +10183,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Yes, both ports on the draft Bill of Lading are genuinely different from the Shipping Instruction and need correction.",
-    "ms": 3648
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -10629,7 +10629,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The gross weight differs by 2,000 KG (142,848 vs 144,848), a genuine numeric discrepancy the customer must correct.",
-    "ms": 795
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -11340,7 +11340,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both are real discrepancies: the consignee names a different company and the container count differs (12 vs 11), so the customer must correct them.",
-    "ms": 818
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -11523,7 +11523,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_145_BL.txt: looks like BL, found 7/7 fields by label",
-    "ms": 0
+    "ms": 1
    },
    {
     "step": "Verify",
@@ -11535,7 +11535,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The shipper names differ by the entity suffix '(MIDDLE EAST) FZE', which indicates a different company rather than mere punctuation or spacing.",
-    "ms": 1564
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -12361,13 +12361,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_160_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_160_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Verify",
@@ -13329,7 +13329,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The notify party and port of discharge are genuinely different and need correction.",
-    "ms": 1587
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -13781,7 +13781,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The container count genuinely differs: the Shipping Instruction says 6 x 20'GP while the draft Bill of Lading says 7 x 20'GP, which the customer must correct.",
-    "ms": 1330
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -14085,7 +14085,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both flags are real: the discharge port names differ (Apapa, Nigeria vs Baltimore, US) and the container count differs (5 vs 6 x 40'HC), so the customer must correct them.",
-    "ms": 1534
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -16281,7 +16281,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The consignee names are entirely different companies, so this is a genuine discrepancy the customer must correct.",
-    "ms": 1111
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -17536,7 +17536,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both the port of loading and port of discharge are genuinely different, so the customer must correct them.",
-    "ms": 1500
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -18319,7 +18319,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both flagged differences are real: the shipper is a different company and the port of discharge is a different port and country.",
-    "ms": 1555
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -19006,7 +19006,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The discharge port differs: the Shipping Instruction says Mersin, Turkey, while the draft Bill of Lading says Long Beach, US, so the customer must correct it.",
-    "ms": 1533
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -20214,13 +20214,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_291_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 1
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_291_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 6
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -20232,7 +20232,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The consignee company name and the container count both differ between the Shipping Instruction and the draft Bill of Lading, so the customer must correct them.",
-    "ms": 2126
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -20859,7 +20859,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_300_BL.xlsx: looks like BL, found 7/7 fields by label",
-    "ms": 1
+    "ms": 6
    },
    {
     "step": "Verify",
@@ -20871,7 +20871,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The shipper and notify party names are materially different companies, so the customer must correct the draft B/L.",
-    "ms": 2166
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -21090,13 +21090,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_302_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 1
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_302_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 6
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -21108,7 +21108,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The container count differs: the Shipping Instruction says 2 x 20'GP while the draft Bill of Lading says 4 x 20'GP.",
-    "ms": 1039
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -21783,7 +21783,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both the shipper and notify party names differ between the Shipping Instruction and draft Bill of Lading, so the customer must correct them.",
-    "ms": 1679
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -21961,13 +21961,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_313_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 1
+    "ms": 4
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_313_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Verify",
@@ -21979,7 +21979,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The draft Bill of Lading lists 4 containers and a lower total gross weight than the Shipping Instruction's 5 containers and 118,270 KG, so both flagged differences are real.",
-    "ms": 1631
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -22553,7 +22553,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both the shipper name and the container count genuinely differ, so the customer must correct them.",
-    "ms": 855
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -23079,7 +23079,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The shipper and consignee are genuinely different companies, not just formatting differences, so the customer should correct these.",
-    "ms": 1232
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -23682,7 +23682,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both differences are real: the notify party is a different company (HABRAS vs SAFQA) and the container count differs (1 x 40'HC vs 2 x 40'HC), so the customer must correct them.",
-    "ms": 765
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -24446,13 +24446,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_351_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_351_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Verify",
@@ -24464,7 +24464,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The draft Bill of Lading shows 16 containers and 360,415 KG, while the Shipping Instruction shows 15 containers and 359,415 KG, so both are real differences needing correction.",
-    "ms": 1283
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -24720,7 +24720,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_354_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -24732,7 +24732,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Yes, the notify party names a different company and the gross weights are genuinely different numbers (20,603 vs 22,603).",
-    "ms": 1964
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -25144,7 +25144,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both flags are genuine: the discharge port changes from Brisbane to Mombasa and the gross weight differs by 1,000 kg, so the customer must correct them.",
-    "ms": 1119
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -26523,7 +26523,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The shipper names are genuinely different companies, so the customer must correct the draft Bill of Lading.",
-    "ms": 1345
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -28258,13 +28258,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_407_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_407_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Verify",
@@ -28823,7 +28823,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The port of loading differs: Shipping Instruction says Singapore, while the draft Bill of Lading says Port Klang, Malaysia.",
-    "ms": 1597
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -29341,7 +29341,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The gross weights differ by 1,000 KG (105,625 vs 106,625), which is a genuine numeric discrepancy the customer must correct.",
-    "ms": 1045
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -29885,7 +29885,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Both the discharge port and container count are genuinely different and need correction.",
-    "ms": 1520
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -30463,13 +30463,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_434_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_434_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 3
    },
    {
     "step": "Verify",
@@ -30481,7 +30481,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The port of discharge differs: the Shipping Instruction says BUSAN, SOUTH KOREA while the draft Bill of Lading says CEBU, PHILIPPINES, which is a genuinely different port the customer must correct.",
-    "ms": 816
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -30664,7 +30664,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_435_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -30676,7 +30676,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The gross weights differ by 500 kg, so the draft B/L should be corrected to 214270 kg.",
-    "ms": 1641
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -31994,7 +31994,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_462_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 5
+    "ms": 4
    },
    {
     "step": "Verify",
@@ -32382,7 +32382,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: Yes, the port of loading is different and the container count differs (1 vs 3), so the customer should correct both.",
-    "ms": 2138
+    "ms": 1
    }
   ],
   "llm_model": "deepseek-flash"
@@ -33289,13 +33289,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_481_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 5
+    "ms": 1
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_481_BL.xlsx: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 1
    },
    {
     "step": "Verify",
@@ -33307,7 +33307,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The consignee is a completely different company, so the customer must correct it.",
-    "ms": 1263
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -34835,13 +34835,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_499_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_499_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 1
+    "ms": 2
    },
    {
     "step": "Verify",
@@ -34853,7 +34853,7 @@
     "step": "Second opinion (AI)",
     "status": "ok",
     "detail": "AI agrees these fields really don't match: The total gross weight differs by 1,000 KG (40,326 vs 41,326), so it is a real discrepancy.",
-    "ms": 2194
+    "ms": 0
    }
   ],
   "llm_model": "deepseek-flash"
@@ -35697,31 +35697,135 @@
   ],
   "status": "NEEDS_REVIEW",
   "review_reason": "unreadable",
-  "review_detail": "Could not read email_512_SI.pdf, email_512_BL.pdf: no text layer.",
-  "ai_used": [],
+  "review_detail": "One document is a scanned image. The AI read it, but a person should confirm before we rely on it.",
+  "ai_used": [
+   "read email_512_SI.pdf visually — it is a scan with no text",
+   "read email_512_BL.pdf visually — it is a scan with no text"
+  ],
   "defect_fields": [],
   "has_defect": false,
-  "comparison": [],
+  "comparison": [
+   {
+    "field": "shipper",
+    "label": "Shipper",
+    "si": "APRIL FAR EAST (M) SDN BHD",
+    "bl": "APRIL FAR EAST (M) SDN BHD",
+    "si_quote": "APRIL FAR EAST (M) SDN BHD",
+    "bl_quote": "APRIL FAR EAST (M) SDN BHD",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "consignee",
+    "label": "Consignee",
+    "si": "AL GURG STATIONERY LLC",
+    "bl": "AL GURG STATIONERY LLC",
+    "si_quote": "AL GURG STATIONERY LLC",
+    "bl_quote": "AL GURG STATIONERY LLC",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "notify_party",
+    "label": "Notify party",
+    "si": "AL GURG STATIONERY LLC",
+    "bl": "AL GURG STATIONERY LLC",
+    "si_quote": "AL GURG STATIONERY LLC",
+    "bl_quote": "AL GURG STATIONERY LLC",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "port_of_loading",
+    "label": "Port of loading",
+    "si": "NHAVA SHEVA, INDIA",
+    "bl": "NHAVA SHEVA, INDIA",
+    "si_quote": "NHAVA SHEVA, INDIA",
+    "bl_quote": "NHAVA SHEVA, INDIA",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "port_of_discharge",
+    "label": "Port of discharge",
+    "si": "TUTICORIN, INDIA",
+    "bl": "TUTICORIN, INDIA",
+    "si_quote": "TUTICORIN, INDIA",
+    "bl_quote": "TUTICORIN, INDIA",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "container_count",
+    "label": "Container count",
+    "si": "6",
+    "bl": "6",
+    "si_quote": "6 x 40'HC",
+    "bl_quote": "6 x 40'HC",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "gross_weight_kg",
+    "label": "Gross weight (kg)",
+    "si": "128544",
+    "bl": "128544",
+    "si_quote": "128,544 KG",
+    "bl_quote": "128,544 KG",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   }
+  ],
   "documents": [
    {
     "path": "attachments/email_512_SI.pdf",
     "format": "pdf",
     "ok": false,
     "error": "no_text_layer",
-    "doc_type": "UNKNOWN",
+    "doc_type": "SI",
     "text": "",
-    "ai_read": false,
-    "fields": {}
+    "ai_read": true,
+    "fields": {
+     "shipper": "APRIL FAR EAST (M) SDN BHD",
+     "consignee": "AL GURG STATIONERY LLC",
+     "notify_party": "AL GURG STATIONERY LLC",
+     "port_of_loading": "NHAVA SHEVA, INDIA",
+     "port_of_discharge": "TUTICORIN, INDIA",
+     "container_count": "6",
+     "gross_weight_kg": "128544"
+    }
    },
    {
     "path": "attachments/email_512_BL.pdf",
     "format": "pdf",
     "ok": false,
     "error": "no_text_layer",
-    "doc_type": "UNKNOWN",
+    "doc_type": "BL",
     "text": "",
-    "ai_read": false,
-    "fields": {}
+    "ai_read": true,
+    "fields": {
+     "shipper": "APRIL FAR EAST (M) SDN BHD",
+     "consignee": "AL GURG STATIONERY LLC",
+     "notify_party": "AL GURG STATIONERY LLC",
+     "port_of_loading": "NHAVA SHEVA, INDIA",
+     "port_of_discharge": "TUTICORIN, INDIA",
+     "container_count": "6",
+     "gross_weight_kg": "128544"
+    }
    }
   ],
   "error": null,
@@ -35745,20 +35849,26 @@
    },
    {
     "step": "Read document",
-    "status": "fail",
-    "detail": "email_512_SI.pdf: scanned image, AI could not read it",
-    "ms": 409
+    "status": "warn",
+    "detail": "email_512_SI.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
+    "ms": 0
    },
    {
     "step": "Read document",
-    "status": "fail",
-    "detail": "email_512_BL.pdf: scanned image, AI could not read it",
-    "ms": 491
+    "status": "warn",
+    "detail": "email_512_BL.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
+    "ms": 6483
+   },
+   {
+    "step": "Verify",
+    "status": "ok",
+    "detail": "7/7 fields compared, 0 mismatch(es)",
+    "ms": 0
    },
    {
     "step": "Escalate",
-    "status": "fail",
-    "detail": "Could not read email_512_SI.pdf, email_512_BL.pdf: no text layer.",
+    "status": "warn",
+    "detail": "One document is a scanned image. The AI read it, but a person should confirm before we rely on it.",
     "ms": 0
    }
   ],
@@ -35775,31 +35885,135 @@
   ],
   "status": "NEEDS_REVIEW",
   "review_reason": "unreadable",
-  "review_detail": "Could not read email_513_SI.pdf, email_513_BL.pdf: no text layer.",
-  "ai_used": [],
+  "review_detail": "One document is a scanned image. The AI read it, but a person should confirm before we rely on it.",
+  "ai_used": [
+   "read email_513_SI.pdf visually — it is a scan with no text",
+   "read email_513_BL.pdf visually — it is a scan with no text"
+  ],
   "defect_fields": [],
   "has_defect": false,
-  "comparison": [],
+  "comparison": [
+   {
+    "field": "shipper",
+    "label": "Shipper",
+    "si": "APRIL FINE PAPER TRADING",
+    "bl": "APRIL FINE PAPER TRADING",
+    "si_quote": "APRIL FINE PAPER TRADING",
+    "bl_quote": "APRIL FINE PAPER TRADING",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "consignee",
+    "label": "Consignee",
+    "si": "KPP-ANTALIS (SINGAPORE) PTE LTD",
+    "bl": "KPP-ANTALIS (SINGAPORE) PTE. LTD.",
+    "si_quote": "KPP-ANTALIS (SINGAPORE) PTE LTD",
+    "bl_quote": "KPP-ANTALIS (SINGAPORE) PTE. LTD.",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": "Same value, different formatting"
+   },
+   {
+    "field": "notify_party",
+    "label": "Notify party",
+    "si": "EAST BRIGHT FZ-LLC",
+    "bl": "EAST BRIGHT FZ-LLC",
+    "si_quote": "EAST BRIGHT FZ-LLC",
+    "bl_quote": "EAST BRIGHT FZ-LLC",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "port_of_loading",
+    "label": "Port of loading",
+    "si": "NHAVA SHEVA, INDIA",
+    "bl": "NHAVA SHEVA, INDIA",
+    "si_quote": "NHAVA SHEVA, INDIA",
+    "bl_quote": "NHAVA SHEVA, INDIA",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "port_of_discharge",
+    "label": "Port of discharge",
+    "si": "VALPARAISO, CHILE",
+    "bl": "VALPARAISO, CHILE",
+    "si_quote": "VALPARAISO, CHILE",
+    "bl_quote": "VALPARAISO, CHILE",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "container_count",
+    "label": "Container count",
+    "si": "10",
+    "bl": "10",
+    "si_quote": "10 x 40'HC",
+    "bl_quote": "10 x 40'HC",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "gross_weight_kg",
+    "label": "Gross weight (kg)",
+    "si": "237750",
+    "bl": "237750",
+    "si_quote": "237,750 KG",
+    "bl_quote": "237,750 KG",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   }
+  ],
   "documents": [
    {
     "path": "attachments/email_513_SI.pdf",
     "format": "pdf",
     "ok": false,
     "error": "no_text_layer",
-    "doc_type": "UNKNOWN",
+    "doc_type": "SI",
     "text": "",
-    "ai_read": false,
-    "fields": {}
+    "ai_read": true,
+    "fields": {
+     "shipper": "APRIL FINE PAPER TRADING",
+     "consignee": "KPP-ANTALIS (SINGAPORE) PTE LTD",
+     "notify_party": "EAST BRIGHT FZ-LLC",
+     "port_of_loading": "NHAVA SHEVA, INDIA",
+     "port_of_discharge": "VALPARAISO, CHILE",
+     "container_count": "10",
+     "gross_weight_kg": "237750"
+    }
    },
    {
     "path": "attachments/email_513_BL.pdf",
     "format": "pdf",
     "ok": false,
     "error": "no_text_layer",
-    "doc_type": "UNKNOWN",
+    "doc_type": "BL",
     "text": "",
-    "ai_read": false,
-    "fields": {}
+    "ai_read": true,
+    "fields": {
+     "shipper": "APRIL FINE PAPER TRADING",
+     "consignee": "KPP-ANTALIS (SINGAPORE) PTE. LTD.",
+     "notify_party": "EAST BRIGHT FZ-LLC",
+     "port_of_loading": "NHAVA SHEVA, INDIA",
+     "port_of_discharge": "VALPARAISO, CHILE",
+     "container_count": "10",
+     "gross_weight_kg": "237750"
+    }
    }
   ],
   "error": null,
@@ -35823,20 +36037,26 @@
    },
    {
     "step": "Read document",
-    "status": "fail",
-    "detail": "email_513_SI.pdf: scanned image, AI could not read it",
-    "ms": 561
+    "status": "warn",
+    "detail": "email_513_SI.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
+    "ms": 8914
    },
    {
     "step": "Read document",
-    "status": "fail",
-    "detail": "email_513_BL.pdf: scanned image, AI could not read it",
-    "ms": 463
+    "status": "warn",
+    "detail": "email_513_BL.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
+    "ms": 6783
+   },
+   {
+    "step": "Verify",
+    "status": "ok",
+    "detail": "7/7 fields compared, 0 mismatch(es)",
+    "ms": 0
    },
    {
     "step": "Escalate",
-    "status": "fail",
-    "detail": "Could not read email_513_SI.pdf, email_513_BL.pdf: no text layer.",
+    "status": "warn",
+    "detail": "One document is a scanned image. The AI read it, but a person should confirm before we rely on it.",
     "ms": 0
    }
   ],
@@ -35853,31 +36073,135 @@
   ],
   "status": "NEEDS_REVIEW",
   "review_reason": "unreadable",
-  "review_detail": "Could not read email_514_SI.pdf, email_514_BL.pdf: no text layer.",
-  "ai_used": [],
+  "review_detail": "One document is a scanned image. The AI read it, but a person should confirm before we rely on it.",
+  "ai_used": [
+   "read email_514_SI.pdf visually — it is a scan with no text",
+   "read email_514_BL.pdf visually — it is a scan with no text"
+  ],
   "defect_fields": [],
   "has_defect": false,
-  "comparison": [],
+  "comparison": [
+   {
+    "field": "shipper",
+    "label": "Shipper",
+    "si": "ASIA PACIFIC PAPERBOARD TRADING PTE LTD",
+    "bl": "ASIA PACIFIC PAPERBOARD TRADING PTE LTD",
+    "si_quote": "ASIA PACIFIC PAPERBOARD TRADING PTE LTD",
+    "bl_quote": "ASIA PACIFIC PAPERBOARD TRADING PTE LTD",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "consignee",
+    "label": "Consignee",
+    "si": "EAST BRIGHT FZ-LLC",
+    "bl": "EAST BRIGHT FZ-LLC",
+    "si_quote": "EAST BRIGHT FZ-LLC",
+    "bl_quote": "EAST BRIGHT FZ-LLC",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "notify_party",
+    "label": "Notify party",
+    "si": "EAST BRIGHT FZ-LLC",
+    "bl": "EAST BRIGHT FZ-LLC",
+    "si_quote": "EAST BRIGHT FZ-LLC",
+    "bl_quote": "EAST BRIGHT FZ-LLC",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "port_of_loading",
+    "label": "Port of loading",
+    "si": "NANTONG, CHINA",
+    "bl": "NANTONG, CHINA",
+    "si_quote": "NANTONG, CHINA",
+    "bl_quote": "NANTONG, CHINA",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "port_of_discharge",
+    "label": "Port of discharge",
+    "si": "GDANSK, POLAND",
+    "bl": "GDANSK, POLAND",
+    "si_quote": "GDANSK, POLAND",
+    "bl_quote": "GDANSK, POLAND",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "container_count",
+    "label": "Container count",
+    "si": "1",
+    "bl": "1",
+    "si_quote": "1 x 20'FCL",
+    "bl_quote": "1 x 20'FCL",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": null
+   },
+   {
+    "field": "gross_weight_kg",
+    "label": "Gross weight (kg)",
+    "si": "22825",
+    "bl": "22825.0",
+    "si_quote": "22,825 KG",
+    "bl_quote": "22,825 KG",
+    "si_source": "ai-vision",
+    "bl_source": "ai-vision",
+    "match": true,
+    "note": "Same value, different formatting"
+   }
+  ],
   "documents": [
    {
     "path": "attachments/email_514_SI.pdf",
     "format": "pdf",
     "ok": false,
     "error": "no_text_layer",
-    "doc_type": "UNKNOWN",
+    "doc_type": "SI",
     "text": "",
-    "ai_read": false,
-    "fields": {}
+    "ai_read": true,
+    "fields": {
+     "shipper": "ASIA PACIFIC PAPERBOARD TRADING PTE LTD",
+     "consignee": "EAST BRIGHT FZ-LLC",
+     "notify_party": "EAST BRIGHT FZ-LLC",
+     "port_of_loading": "NANTONG, CHINA",
+     "port_of_discharge": "GDANSK, POLAND",
+     "container_count": "1",
+     "gross_weight_kg": "22825"
+    }
    },
    {
     "path": "attachments/email_514_BL.pdf",
     "format": "pdf",
     "ok": false,
     "error": "no_text_layer",
-    "doc_type": "UNKNOWN",
+    "doc_type": "BL",
     "text": "",
-    "ai_read": false,
-    "fields": {}
+    "ai_read": true,
+    "fields": {
+     "shipper": "ASIA PACIFIC PAPERBOARD TRADING PTE LTD",
+     "consignee": "EAST BRIGHT FZ-LLC",
+     "notify_party": "EAST BRIGHT FZ-LLC",
+     "port_of_loading": "NANTONG, CHINA",
+     "port_of_discharge": "GDANSK, POLAND",
+     "container_count": "1",
+     "gross_weight_kg": "22825.0"
+    }
    }
   ],
   "error": null,
@@ -35901,20 +36225,26 @@
    },
    {
     "step": "Read document",
-    "status": "fail",
-    "detail": "email_514_SI.pdf: scanned image, AI could not read it",
-    "ms": 494
+    "status": "warn",
+    "detail": "email_514_SI.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
+    "ms": 43573
    },
    {
     "step": "Read document",
-    "status": "fail",
-    "detail": "email_514_BL.pdf: scanned image, AI could not read it",
-    "ms": 470
+    "status": "warn",
+    "detail": "email_514_BL.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
+    "ms": 23473
+   },
+   {
+    "step": "Verify",
+    "status": "ok",
+    "detail": "7/7 fields compared, 0 mismatch(es)",
+    "ms": 0
    },
    {
     "step": "Escalate",
-    "status": "fail",
-    "detail": "Could not read email_514_SI.pdf, email_514_BL.pdf: no text layer.",
+    "status": "warn",
+    "detail": "One document is a scanned image. The AI read it, but a person should confirm before we rely on it.",
     "ms": 0
    }
   ],
@@ -36733,7 +37063,7 @@
     "step": "Extract fields (AI)",
     "status": "ok",
     "detail": "Shipping Instruction: AI found nothing new for labels the rules didn't recognise",
-    "ms": 4603
+    "ms": 0
    },
    {
     "step": "Verify",
@@ -36923,7 +37253,7 @@
     "step": "Extract fields (AI)",
     "status": "ok",
     "detail": "Shipping Instruction: AI found nothing new for labels the rules didn't recognise",
-    "ms": 6787
+    "ms": 0
    },
    {
     "step": "Verify",

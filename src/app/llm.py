@@ -5,7 +5,7 @@ fractions of a cent per call). Picked by env vars:
                         Text only. If GEMINI_API_KEY is also set, Gemini's free
                         tier reads scanned PDFs (vision) — DeepSeek does the rest.
   LLM_PROVIDER=gemini   GEMINI_API_KEY=...   (Google AI Studio free key, no card)
-                        GEMINI_MODEL=gemini-flash-latest (reads scanned PDFs too)
+                        GEMINI_MODEL=gemini-3.6-flash (reads scanned PDFs too)
   LLM_PROVIDER=openai_compat  LLM_BASE_URL=https://api.groq.com/openai/v1
                         LLM_API_KEY=...  LLM_MODEL=llama-3.3-70b-versatile
                         (Groq free tier, OpenRouter free models, or a local
@@ -67,7 +67,9 @@ def can_read_pdf() -> bool:
 
 
 def gemini_model() -> str:
-    return os.environ.get("GEMINI_MODEL", "gemini-flash-latest")
+    # Google retires older Gemini names for new keys (2.5-flash now 404s), and the
+    # "-latest" alias is the first to return 503 under load. Pin a real model.
+    return os.environ.get("GEMINI_MODEL", "gemini-3.6-flash")
 
 
 def model_name() -> str:
