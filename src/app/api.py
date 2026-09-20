@@ -45,7 +45,7 @@ inbox = Inbox(str(DATA))
 
 def _load_results() -> dict:
     p = DATA / "results.json"
-    base = json.loads(p.read_text()) if p.exists() else {}
+    base = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
     try:
         base.update(store.extra_results())
     except Exception as exc:  # cloud store down → still serve the batch results
