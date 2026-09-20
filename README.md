@@ -20,7 +20,7 @@ A reviewer can confirm or correct any result in one click, and ShipCheck can wri
 |---|---|
 | Live demo | _TBD (see [docs/DEPLOY.md](docs/DEPLOY.md))_ |
 | Demo video (≤ 5 min) | _TBD_ |
-| Slides | _TBD_ |
+| Slides | [Team deck template](docs/slides/ShipCheck-team-deck-template.pptx) |
 
 ---
 

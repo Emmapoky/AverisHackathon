@@ -63,7 +63,7 @@ def _sync():
     p = DATA / "results.json"
     if p.exists() and p.stat().st_mtime != _results_mtime:
         _results_mtime = p.stat().st_mtime
-        fresh = json.loads(p.read_text())
+        fresh = json.loads(p.read_text(encoding="utf-8"))
         for k in [k for k in RESULTS if not k.startswith("new_")]:
             RESULTS.pop(k)
         RESULTS.update(fresh)
@@ -130,7 +130,7 @@ def summary():
     return {"total": len(eff), "categories": cats, "doc_status": stats, "open_reviews": open_reviews,
             "reviewed": len(reviews), "auto_pct": round(100 * auto / max(1, len(eff)), 1),
             "decided_by": by, "mismatch_fields": Counter(f for r in eff if r["status"] == "MISMATCH" for f in r["defect_fields"]),
-            "validation": json.loads(val.read_text()) if val.exists() else None,
+            "validation": json.loads(val.read_text(encoding="utf-8")) if val.exists() else None,
             # rough: 3 min to triage + 10 min per manual SI-vs-BL check
             "minutes_saved": 3 * len(eff) + 10 * (stats.get("OK", 0) + stats.get("MISMATCH", 0))}
 

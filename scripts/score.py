@@ -17,12 +17,12 @@ if not SERVER.exists():
 sys.path.insert(0, str(SERVER))
 from scoring import score_all  # noqa: E402
 
-sub = json.loads((ROOT / "submission.json").read_text())
-board = score_all(json.loads(GT.read_text()), sub)
+sub = json.loads((ROOT / "submission.json").read_text(encoding="utf-8"))
+board = score_all(json.loads(GT.read_text(encoding="utf-8")), sub)
 keep = {"final_score": board["final_score"],
         "stage1": {k: board["stage1"][k] for k in ("accuracy", "macro_f1")},
         "stage3": {k: board["stage3"][k] for k in ("defect_precision", "defect_recall", "defect_f1", "field_f1")},
         "end_to_end": board["end_to_end"],
         "reliability": {k: board["reliability"][k] for k in ("escalation_recall", "escalation_precision", "gold_review", "pred_review")}}
-(ROOT / "data" / "validation.json").write_text(json.dumps(keep, indent=2))
+(ROOT / "data" / "validation.json").write_text(json.dumps(keep, indent=2), encoding="utf-8")
 print(json.dumps(keep, indent=2))
