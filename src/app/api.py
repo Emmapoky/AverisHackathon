@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import base64
 import json
+import os
 import re
 import time
 from collections import Counter
@@ -28,7 +29,11 @@ from .store import get_store  # noqa: E402
 
 DATA = ROOT / "data"
 STATIC = ROOT / "src" / "static"
-UPLOADS = DATA / "uploads"
+# Serverless hosts have a read-only filesystem apart from /tmp. Vercel sets $VERCEL,
+# so we pick a writable default there no matter which entry point it imports.
+ON_SERVERLESS = bool(os.environ.get("VERCEL"))
+UPLOADS = Path(os.environ.get("UPLOADS_DIR")
+                or ("/tmp/shipcheck-uploads" if ON_SERVERLESS else DATA / "uploads"))
 
 app = FastAPI(title=f"{APP_NAME} API")
 
@@ -103,7 +108,8 @@ def _row(r: dict) -> dict:
     return {k: r.get(k) for k in ("email_id", "from", "subject", "category", "status", "decided_by",
                                    "review_reason", "defect_fields", "class_confidence")} | \
         {"n_attachments": len(r.get("attachments", [])), "reviewed": bool(r.get("review")),
-         "uploaded": r["email_id"].startswith("new_")}
+         "uploaded": r["email_id"].startswith("new_"), "ai": bool(r.get("ai_used")),
+         "second_opinion": (r.get("second_opinion") or {}).get("agrees")}
 
 
 # ------------------------------------------------------------------ API
@@ -126,10 +132,11 @@ def summary():
                        and not r.get("review"))
     auto = sum(1 for r in eff if r["status"] != "NEEDS_REVIEW" and r.get("decided_by") != "rule_low_confidence")
     by = Counter(r.get("decided_by") for r in eff)
+    ai_touched = sum(1 for r in eff if r.get("ai_used"))
     val = DATA / "validation.json"
     return {"total": len(eff), "categories": cats, "doc_status": stats, "open_reviews": open_reviews,
             "reviewed": len(reviews), "auto_pct": round(100 * auto / max(1, len(eff)), 1),
-            "decided_by": by, "mismatch_fields": Counter(f for r in eff if r["status"] == "MISMATCH" for f in r["defect_fields"]),
+            "decided_by": by, "ai_touched": ai_touched, "mismatch_fields": Counter(f for r in eff if r["status"] == "MISMATCH" for f in r["defect_fields"]),
             "validation": json.loads(val.read_text(encoding="utf-8")) if val.exists() else None,
             # rough: 3 min to triage + 10 min per manual SI-vs-BL check
             "minutes_saved": 3 * len(eff) + 10 * (stats.get("OK", 0) + stats.get("MISMATCH", 0))}
@@ -137,13 +144,15 @@ def summary():
 
 @app.get("/api/emails")
 def list_emails(category: str | None = None, status: str | None = None, q: str | None = None,
-                queue: bool = False):
+                queue: bool = False, ai: bool = False):
     _sync()
     reviews = _reviews()
     rows = []
     for k, r in RESULTS.items():
         e = _effective(r, reviews.get(k))
         if queue and not ((e["status"] == "NEEDS_REVIEW" or e.get("decided_by") == "rule_low_confidence") and not e.get("review")):
+            continue
+        if ai and not e.get("ai_used"):
             continue
         if category and e["category"] != category:
             continue

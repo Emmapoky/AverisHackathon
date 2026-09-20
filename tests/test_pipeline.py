@@ -306,3 +306,56 @@ def test_supabase_new_style_key_is_not_sent_as_bearer():
     assert new.h["apikey"] == "sb_secret_abc" and "Authorization" not in new.h
     legacy = SupabaseStore("https://x.supabase.co", "eyJhbGciOi.payload.sig")
     assert legacy.h["Authorization"] == "Bearer eyJhbGciOi.payload.sig"
+
+
+# ------------------------------------- AI second opinion (advisory only)
+
+def _mismatching_pair():
+    bad = BL_ENGLISH.replace("Discharge Port: Jebel Ali, UAE", "Discharge Port: Dammam, Saudi Arabia")
+    return {"si.txt": SI_MALAY.encode(), "bl.txt": bad.encode()}
+
+
+@pytest.mark.parametrize("agrees", [True, False])
+def test_second_opinion_never_changes_the_submitted_answer(monkeypatch, agrees):
+    """The AI reviewer is a second pair of eyes, not a decision maker.
+
+    Whatever it says — even flatly contradicting the rules — the category, status
+    and defect fields we submit must be byte-identical to the run without it.
+    """
+    files = _mismatching_pair()
+    email = _email("Please verify the draft BL matches the SI.", files)
+
+    baseline = to_submission(process_email(email, files.__getitem__, use_llm=False))
+
+    monkeypatch.setattr(llm, "available", lambda: True)
+    monkeypatch.setattr(llm, "extract_fields", lambda *a, **k: None)
+    monkeypatch.setattr(llm, "second_opinion",
+                        lambda *a, **k: {"agrees": agrees, "note": "checked", "confidence": 0.9, "model": "test"})
+    r = process_email(email, files.__getitem__, use_llm=True, second_opinion=True)
+
+    assert to_submission(r) == baseline
+    assert r["second_opinion"]["agrees"] is agrees
+    assert "double-checked the mismatch as a second reviewer" in r["ai_used"]
+
+
+def test_second_opinion_is_off_by_default():
+    files = _mismatching_pair()
+    r = process_email(_email("Please verify the draft BL matches the SI.", files), files.__getitem__, use_llm=False)
+    assert "second_opinion" not in r
+
+
+def test_second_opinion_failure_is_not_fatal(monkeypatch):
+    """A dead AI key mid-demo must leave the decision untouched, not crash the email."""
+    files = _mismatching_pair()
+    monkeypatch.setattr(llm, "available", lambda: True)
+    monkeypatch.setattr(llm, "extract_fields", lambda *a, **k: None)
+    monkeypatch.setattr(llm, "second_opinion", lambda *a, **k: None)
+    r = process_email(_email("Please verify the draft BL matches the SI.", files),
+                      files.__getitem__, use_llm=True, second_opinion=True)
+    assert r["status"] == "MISMATCH" and "second_opinion" not in r
+
+
+def test_ai_used_is_empty_when_rules_do_everything():
+    files = {"si.txt": SI_MALAY.encode(), "bl.txt": BL_ENGLISH.encode()}
+    r = process_email(_email("Attached SI and draft BL.", files), files.__getitem__, use_llm=False)
+    assert r["status"] == "OK" and r["ai_used"] == []

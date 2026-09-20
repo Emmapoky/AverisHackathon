@@ -79,8 +79,8 @@ Email ─► ① Sort ──────────────► not a BL che
 | Backend / pipeline | Python 3.12, FastAPI, pypdf, python-docx, openpyxl |
 | Dashboard | Plain HTML/CSS/JS served by FastAPI (no build step) |
 | AI | **DeepSeek API** (`deepseek-chat`) when rules aren't sure · **Gemini free tier** reads scanned PDFs · both optional, set in `.env` |
-| Cloud | Hugging Face Spaces (Docker) + Supabase free Postgres for reviews and uploads, all free tiers |
-| Tests | pytest (37 tests) |
+| Cloud | **Vercel** (FastAPI, deploys from GitHub) + **Supabase** free Postgres for reviews and uploads, all free tiers |
+| Tests | pytest (67 tests) |
 
 ---
 
@@ -96,6 +96,8 @@ bash scripts/start.sh                 # open http://localhost:8000
 ```bash
 python3 -m pytest -q                  # tests
 python3 scripts/run_batch.py --no-llm # rules only, no network
+python3 scripts/run_batch.py --second-opinion   # + AI double-checks every mismatch (advisory)
+python3 scripts/run_batch.py --mode agents      # AI-first pipeline, scored separately
 python3 scripts/score.py              # organisers' scorer (needs _local/scoring-server, see below)
 ```
 
@@ -117,10 +119,13 @@ python3 scripts/score.py              # organisers' scorer (needs _local/scoring
 │   ├── store.py       reviews + uploads: local file or Supabase
 │   └── api.py         FastAPI endpoints + serves the dashboard
 ├── src/static/        dashboard (index.html, app.js, style.css)
-├── scripts/           run_batch.py, score.py
-├── tests/             37 tests on unseen wording, layouts and languages
+├── api/index.py       Vercel entry point (serves the same app, /tmp for writes)
+├── vercel.json        routes every path to the function, bundles data/ + src/
+├── Dockerfile         backup host (Render / any container host)
+├── scripts/           run_batch.py, score.py, check_supabase.py
+├── tests/             67 tests on unseen wording, layouts and languages
 ├── data/              organisers' synthetic dataset + results.json
-└── docs/              brief, rules, decisions, deploy guide
+└── docs/              brief, rules, decisions, deploy guide, UI brief
 ```
 
 ## 🗺️ Roadmap
