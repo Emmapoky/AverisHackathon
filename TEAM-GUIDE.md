@@ -27,12 +27,26 @@ Our job now: **polish, deploy, make slides, record the video.**
 - A code editor: **VS Code** recommended.
 - A **GitHub account**. Send your username to Erwyna so you can be added to the repo.
 
-### Steps (Mac Terminal, or Git Bash on Windows)
+### Steps — **Mac / Linux** (Terminal)
 ```bash
 git clone https://github.com/Emmapoky/AverisHackathon.git
 cd AverisHackathon
 bash scripts/setup.sh        # one time: installs everything, runs the tests (~1–2 min)
 bash scripts/start.sh        # starts the app
+```
+
+### Steps — **Windows** (PowerShell, no Git Bash needed)
+Open **PowerShell** from the Start menu, then:
+```powershell
+git clone https://github.com/Emmapoky/AverisHackathon.git
+cd AverisHackathon
+.\scripts\setup.ps1          # one time: installs everything, runs the tests (~1–2 min)
+.\scripts\start.ps1          # starts the app
+```
+If you get **"running scripts is disabled on this system"**, run this once in the same
+window and try again (it only affects that window):
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 Open **http://localhost:8000** in your browser. Press **Ctrl+C** in the terminal to stop it.
 
@@ -144,7 +158,7 @@ src/app/llm.py        AI: DeepSeek (text) + Gemini (scans), cached
 src/app/api.py        Web API + serves the dashboard
 src/app/store.py      Saves reviews: local file or Supabase
 src/static/           Dashboard (index.html, app.js, style.css)
-scripts/              setup.sh, start.sh, run_batch.py, score.py, check_supabase.py
+scripts/              setup.sh/.ps1, start.sh/.ps1, run_batch.py, score.py, check_supabase.py
 tests/                67 tests: run with  python -m pytest -q
 data/                 The organisers' 520 emails + attachments + results.json
 docs/                 Brief, rules, decisions, DEPLOY.md
@@ -156,13 +170,15 @@ docs/                 Brief, rules, decisions, DEPLOY.md
 
 | I want to… | Run |
 |---|---|
-| Start the app | `bash scripts/start.sh` → <http://localhost:8000> |
+| Start the app | Mac: `bash scripts/start.sh` · Windows: `.\scripts\start.ps1` → <http://localhost:8000> |
 | Re-process all emails after changing rules | `python scripts/run_batch.py` (add `--no-llm` to skip AI) |
 | Run the tests | `python -m pytest -q` |
 | Check accuracy with the organisers' scorer | Unzip `sdoc-hackathon-docker.zip` (Google Drive) into `_local/scoring-server/`, then `python scripts/score.py` |
 | Deploy the live site (Erwyna) | `git push` — Vercel rebuilds `main` by itself |
 
-(Activate the environment first in each new terminal: `source .venv/bin/activate`, or `source .venv/Scripts/activate` on Windows.)
+(Activate the environment first in each new terminal: `source .venv/bin/activate` on Mac/Linux,
+or `.\.venv\Scripts\Activate.ps1` in Windows PowerShell. On Windows the command is `python`,
+not `python3`.)
 
 ---
 
@@ -172,7 +188,10 @@ docs/                 Brief, rules, decisions, DEPLOY.md
 |---|---|
 | `python3: command not found` | Install Python 3.10+ (Windows: tick "Add Python to PATH") and reopen the terminal |
 | `bash: scripts/setup.sh: No such file` | You're not in the project folder: `cd AverisHackathon` |
-| Port 8000 already in use | `PORT=8001 bash scripts/start.sh` |
+| Windows: `bash` / `setup.sh` not recognised | Use the PowerShell version instead: `.\scripts\setup.ps1` |
+| Windows: "running scripts is disabled on this system" | `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`, then run the script again |
+| Windows: `python3` not recognised | On Windows the command is just `python` (or `py -3`) |
+| Port 8000 already in use | Mac: `PORT=8001 bash scripts/start.sh` · Windows: `$env:PORT=8001; .\scripts\start.ps1` |
 | Tests fail after your change | Read the first failing test name; it says what broke. Ask in the group before pushing |
 | App says "Rules only" | That's fine without keys. For AI, add a key to `.env` and restart |
 | `git push` rejected | `git pull` first, then push again |

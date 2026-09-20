@@ -86,6 +86,11 @@ Email ─► ① Sort ──────────────► not a BL che
 
 ## 🚀 Run it locally
 
+Python 3.10+ is the only requirement. No Node, no build step, no API key needed —
+without keys it runs on rules alone and still scores 100%.
+
+**macOS / Linux**
+
 ```bash
 git clone https://github.com/Emmapoky/AverisHackathon.git
 cd AverisHackathon
@@ -93,13 +98,39 @@ bash scripts/setup.sh                 # installs everything, processes the email
 bash scripts/start.sh                 # open http://localhost:8000
 ```
 
-```bash
-python3 -m pytest -q                  # tests
-python3 scripts/run_batch.py --no-llm # rules only, no network
-python3 scripts/run_batch.py --second-opinion   # + AI double-checks every mismatch (advisory)
-python3 scripts/run_batch.py --mode agents      # AI-first pipeline, scored separately
-python3 scripts/score.py              # organisers' scorer (needs _local/scoring-server, see below)
+**Windows (PowerShell)** — no Git Bash needed:
+
+```powershell
+git clone https://github.com/Emmapoky/AverisHackathon.git
+cd AverisHackathon
+.\scripts\setup.ps1                   # installs everything, processes the emails, runs the tests
+.\scripts\start.ps1                   # open http://localhost:8000
 ```
+
+> **"running scripts is disabled on this system"?** Windows blocks unsigned scripts by
+> default. Run this once in the same window, then try again — it only affects that window:
+>
+> ```powershell
+> Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+> ```
+>
+> **`python` not recognised?** Install Python from
+> <https://www.python.org/downloads/> and tick **"Add python.exe to PATH"** during setup,
+> then reopen PowerShell.
+
+**Everyday commands.** On Windows use `python`; on macOS/Linux use `python3`:
+
+| What | macOS / Linux | Windows |
+|---|---|---|
+| Run the tests | `python3 -m pytest -q` | `python -m pytest -q` |
+| Rules only, no network | `python3 scripts/run_batch.py --no-llm` | `python scripts/run_batch.py --no-llm` |
+| + AI double-checks each mismatch | `python3 scripts/run_batch.py --second-opinion` | `python scripts/run_batch.py --second-opinion` |
+| AI-first pipeline, scored separately | `python3 scripts/run_batch.py --mode agents` | `python scripts/run_batch.py --mode agents` |
+| Organisers' scorer | `python3 scripts/score.py` | `python scripts/score.py` |
+| Check the Supabase connection | `python3 scripts/check_supabase.py` | `python scripts/check_supabase.py` |
+
+Activate the environment by hand if you prefer: `source .venv/bin/activate`
+(macOS/Linux) or `.\.venv\Scripts\Activate.ps1` (Windows).
 
 **Organisers' scorer (optional):** unzip `sdoc-hackathon-docker.zip` into `_local/scoring-server/`. It's git-ignored because it contains the answer key.
 
@@ -122,7 +153,7 @@ python3 scripts/score.py              # organisers' scorer (needs _local/scoring
 ├── api/index.py       Vercel entry point (serves the same app, /tmp for writes)
 ├── vercel.json        routes every path to the function, bundles data/ + src/
 ├── Dockerfile         backup host (Render / any container host)
-├── scripts/           run_batch.py, score.py, check_supabase.py
+├── scripts/           setup + start (.sh and .ps1), run_batch.py, score.py, check_supabase.py
 ├── tests/             67 tests on unseen wording, layouts and languages
 ├── data/              organisers' synthetic dataset + results.json
 └── docs/              brief, rules, decisions, deploy guide, UI brief
