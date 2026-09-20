@@ -43,7 +43,7 @@ def main():
     print(f"{len(emails)} emails · AI: {llm.model_name() + ' (' + llm.provider() + ')' if use_llm else 'off (rules only)'}")
 
     out_path = Path(args.out)
-    results = json.loads(out_path.read_text()) if (args.only and out_path.exists()) else {}
+    results = json.loads(out_path.read_text(encoding="utf-8")) if (args.only and out_path.exists()) else {}
     t0 = time.time()
     for i, e in enumerate(emails, 1):
         results[e["email_id"]] = process_email(e, inbox.read_bytes, use_llm=use_llm)
@@ -51,11 +51,11 @@ def main():
             print(f"  {i}/{len(emails)}  ({time.time() - t0:.0f}s)")
 
     results = dict(sorted(results.items()))
-    out_path.write_text(json.dumps(results, indent=1, ensure_ascii=False))
+    out_path.write_text(json.dumps(results, indent=1, ensure_ascii=False), encoding="utf-8")
     sub = {k: to_submission(v) for k, v in results.items()}
-    (ROOT / "submission.json").write_text(json.dumps(sub, indent=2))
+    (ROOT / "submission.json").write_text(json.dumps(sub, indent=2), encoding="utf-8")
 
-    print(f"done in {time.time() - t0:.1f}s → {out_path.relative_to(ROOT)}, submission.json")
+    print(f"done in {time.time() - t0:.1f}s -> {out_path.relative_to(ROOT)}, submission.json")
     print("categories:", dict(Counter(r["category"] for r in results.values())))
     print("status:    ", dict(Counter(r["status"] for r in results.values())))
     print("decided_by:", dict(Counter(r["decided_by"] for r in results.values())))

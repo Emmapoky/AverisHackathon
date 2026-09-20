@@ -150,7 +150,7 @@ def ask_json(prompt: str, pdf_bytes: bytes | None = None, retries: int = 3) -> d
     key = f"{prov}|{model}|{prompt}|{hashlib.sha256(pdf_bytes or b'').hexdigest()}"
     cp = _cache_path(key)
     if cp.exists():
-        return json.loads(cp.read_text())
+        return json.loads(cp.read_text(encoding="utf-8"))
     for attempt in range(retries):
         _throttle()
         try:
@@ -161,7 +161,7 @@ def ask_json(prompt: str, pdf_bytes: bytes | None = None, retries: int = 3) -> d
             out = _parse_json(text)
             if out is not None:
                 CACHE_DIR.mkdir(parents=True, exist_ok=True)
-                cp.write_text(json.dumps(out, ensure_ascii=False))
+                cp.write_text(json.dumps(out, ensure_ascii=False), encoding="utf-8")
                 last_error = None
             return out
         except requests.HTTPError as exc:

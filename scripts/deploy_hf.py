@@ -111,7 +111,7 @@ def main():
     api.upload_folder(repo_id=repo_id, repo_type="space", folder_path=str(ROOT),
                       allow_patterns=INCLUDE, ignore_patterns=EXCLUDE,
                       commit_message="Deploy ShipCheck")
-    readme = HEADER + "\n" + (ROOT / "README.md").read_text()
+    readme = HEADER + "\n" + (ROOT / "README.md").read_text(encoding="utf-8")
     api.upload_file(repo_id=repo_id, repo_type="space", path_or_fileobj=readme.encode(),
                     path_in_repo="README.md", commit_message="Space README")
 

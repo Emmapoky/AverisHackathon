@@ -14,7 +14,7 @@ import pytest  # noqa: E402
 
 from app import llm  # noqa: E402
 from app.classify import classify  # noqa: E402
-from app.fields import (fields_from_pairs, is_placeholder, norm_party, norm_port,  # noqa: E402
+from app.fields import (fields_from_pairs, is_placeholder, label_to_field, norm_party, norm_port,  # noqa: E402
                         parse_container_count, parse_weight_kg)
 from app.parsing import parse_attachment  # noqa: E402
 from app.pipeline import process_email, to_submission  # noqa: E402
@@ -99,6 +99,32 @@ def test_malay_labels_are_understood():
                       "port_of_discharge", "container_count", "gross_weight_kg"}
 
 
+@pytest.mark.parametrize("label,field", [
+    ("Pihak untuk dihubungi", "notify_party"),
+    ("Penerima kiriman", "consignee"),
+    ("Pihak penghantar", "shipper"),
+    ("Pelabuhan pemuatan", "port_of_loading"),
+    ("Pelabuhan destinasi", "port_of_discharge"),
+    ("Kuantiti kontena", "container_count"),
+    ("Jumlah berat kasar", "gross_weight_kg"),
+])
+def test_additional_malay_field_labels(label, field):
+    assert label_to_field(label) == field
+
+
+@pytest.mark.parametrize("label,field", [
+    ("通知方", "notify_party"),
+    ("提货人", "consignee"),
+    ("托运人", "shipper"),
+    ("起运港", "port_of_loading"),
+    ("目的港", "port_of_discharge"),
+    ("集装箱数量", "container_count"),
+    ("总毛重", "gross_weight_kg"),
+])
+def test_additional_chinese_field_labels(label, field):
+    assert label_to_field(label) == field
+
+
 def _email(body, atts, subject="Please check draft BL"):
     return {"email_id": "t1", "from": "a@b.com", "subject": subject, "body": body, "attachments": list(atts)}
 
@@ -181,6 +207,32 @@ def test_triage_new_wording(body, subject, cat):
     assert r["category"] == cat, r["scores"]
 
 
+@pytest.mark.parametrize("body", [
+    "Sila sahkan draf bil muatan untuk penghantaran ini.",
+    "Mohon periksa konosemen yang dilampirkan.",
+    "Tolong bandingkan bil muatan dengan arahan penghantaran.",
+    "Pastikan BL sepadan dengan SI sebelum dihantar.",
+    "Ada percanggahan antara konosemen dan arahan penghantaran; sila teliti.",
+])
+def test_additional_malay_bl_phrases(body):
+    r = classify({"from": "ops@example.my", "subject": "Dokumen penghantaran", "body": body,
+                  "attachments": ["si.txt", "bl.txt"]}, use_llm=False)
+    assert r["category"] == "BL_COMPARISON", r["scores"]
+
+
+@pytest.mark.parametrize("body", [
+    "请确认提单草稿。",
+    "请审核附件中的提单。",
+    "请比较提单和装运指示。",
+    "请检查提单与托运指示是否相符。",
+    "提单和装运指示之间有差异，请核对。",
+])
+def test_additional_chinese_bl_phrases(body):
+    r = classify({"from": "ops@example.cn", "subject": "运输文件", "body": body,
+                  "attachments": ["si.txt", "bl.txt"]}, use_llm=False)
+    assert r["category"] == "BL_COMPARISON", r["scores"]
+
+
 # ------------------------------------------------------------ DeepSeek wiring (no network)
 
 def test_deepseek_request_shape(monkeypatch, tmp_path):
@@ -244,3 +296,13 @@ def test_scans_go_to_gemini_even_when_deepseek_is_main(monkeypatch, tmp_path):
     mod.classify_email({"from": "a", "subject": "b", "body": "c"}, {"SPAM": "x"})  # text → DeepSeek
     assert "googleapis.com" in urls[0] and urls[1] == "https://api.deepseek.com/chat/completions"
     importlib.reload(llm)
+
+
+# ------------------------------------------------------------ Supabase key handling
+
+def test_supabase_new_style_key_is_not_sent_as_bearer():
+    from app.store import SupabaseStore
+    new = SupabaseStore("https://x.supabase.co", "sb_secret_abc")
+    assert new.h["apikey"] == "sb_secret_abc" and "Authorization" not in new.h
+    legacy = SupabaseStore("https://x.supabase.co", "eyJhbGciOi.payload.sig")
+    assert legacy.h["Authorization"] == "Bearer eyJhbGciOi.payload.sig"
