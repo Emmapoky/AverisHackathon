@@ -23,7 +23,7 @@ load_env()
 
 from . import llm  # noqa: E402
 from .fields import FIELD_LABELS, FIELDS  # noqa: E402
-from .inbox import Inbox  # noqa: E402
+from .inbox import Inbox  # noqa: E402  (None if data/loader.py isn't deployed)
 from .pipeline import process_email, to_submission  # noqa: E402
 from .store import get_store  # noqa: E402
 
@@ -45,7 +45,17 @@ async def no_cache_static(request, call_next):
         resp.headers["Cache-Control"] = "no-cache"
     return resp
 store = get_store()
-inbox = Inbox(str(DATA))
+
+# Things that must not take the whole app down when a file is missing from a
+# deploy bundle: without these guards a partial upload gives every route an
+# opaque 500 with no way to tell what is absent.
+BOOT_PROBLEMS: list[str] = []
+if Inbox is None:
+    BOOT_PROBLEMS.append("data/loader.py is missing, so the organisers' inbox loader is unavailable")
+if not (DATA / "results.json").exists():
+    BOOT_PROBLEMS.append("data/results.json is missing, so the dashboard has no emails to show")
+if not (STATIC / "index.html").exists():
+    BOOT_PROBLEMS.append("src/static/ is missing, so the dashboard cannot be served")
 
 
 def _load_results() -> dict:
@@ -278,12 +288,16 @@ def get_file(path: str):
 
 @app.get("/health")
 def health():
-    return {"ok": True, "emails": len(RESULTS)}
+    return {"ok": not BOOT_PROBLEMS, "emails": len(RESULTS),
+            "problems": BOOT_PROBLEMS or None}
 
 
-app.mount("/static", StaticFiles(directory=STATIC), name="static")
+if STATIC.is_dir():
+    app.mount("/static", StaticFiles(directory=STATIC), name="static")
 
 
 @app.get("/")
 def index():
+    if not (STATIC / "index.html").exists():
+        raise HTTPException(500, "Dashboard files were not deployed. See /health.")
     return FileResponse(STATIC / "index.html")

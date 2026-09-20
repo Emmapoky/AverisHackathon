@@ -614,7 +614,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_005_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 69
+    "ms": 35
    },
    {
     "step": "Read document",
@@ -4409,7 +4409,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_055_BL.docx: looks like BL, found 7/7 fields by label",
-    "ms": 29
+    "ms": 18
    },
    {
     "step": "Verify",
@@ -4976,7 +4976,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_059_SI.pdf: looks like SI, found 7/7 fields by label",
-    "ms": 39
+    "ms": 27
    },
    {
     "step": "Read document",
@@ -12367,7 +12367,7 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_160_BL.pdf: looks like BL, found 7/7 fields by label",
-    "ms": 2
+    "ms": 1
    },
    {
     "step": "Verify",
@@ -20853,13 +20853,13 @@
     "step": "Read document",
     "status": "ok",
     "detail": "email_300_SI.xlsx: looks like SI, found 7/7 fields by label",
-    "ms": 3
+    "ms": 2
    },
    {
     "step": "Read document",
     "status": "ok",
     "detail": "email_300_BL.xlsx: looks like BL, found 7/7 fields by label",
-    "ms": 6
+    "ms": 5
    },
    {
     "step": "Verify",
@@ -35857,7 +35857,7 @@
     "step": "Read document",
     "status": "warn",
     "detail": "email_512_BL.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
-    "ms": 6483
+    "ms": 0
    },
    {
     "step": "Verify",
@@ -36039,13 +36039,13 @@
     "step": "Read document",
     "status": "warn",
     "detail": "email_513_SI.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
-    "ms": 8914
+    "ms": 0
    },
    {
     "step": "Read document",
     "status": "warn",
     "detail": "email_513_BL.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
-    "ms": 6783
+    "ms": 0
    },
    {
     "step": "Verify",
@@ -36227,13 +36227,13 @@
     "step": "Read document",
     "status": "warn",
     "detail": "email_514_SI.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
-    "ms": 43573
+    "ms": 0
    },
    {
     "step": "Read document",
     "status": "warn",
     "detail": "email_514_BL.pdf: scanned image — AI read it visually (7/7 fields); a person should confirm",
-    "ms": 23473
+    "ms": 0
    },
    {
     "step": "Verify",

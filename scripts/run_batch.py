@@ -65,6 +65,9 @@ def main():
                      "Pull the branch that adds it, or run without --mode to use the rules pipeline.")
         process = getattr(agents, "process_email", process_email)
 
+    if Inbox is None:
+        from app.inbox import LOAD_ERROR
+        sys.exit(f"Could not load data/loader.py ({LOAD_ERROR}). Is the data/ folder present?")
     inbox = Inbox(args.source)
     emails = inbox.emails()
     if args.only:
