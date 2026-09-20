@@ -86,8 +86,8 @@ Email ─► ① Sort ──────────────► not a BL che
 
 ## 🚀 Run it locally
 
-Python 3.10+ is the only requirement. No Node, no build step, no API key needed —
-without keys it runs on rules alone and still scores 100%.
+Python 3.10+ is the only requirement. No Node, no build step, and no API key
+needed. Without keys it runs on rules alone and still scores 100%.
 
 **macOS / Linux**
 
@@ -98,7 +98,7 @@ bash scripts/setup.sh                 # installs everything, processes the email
 bash scripts/start.sh                 # open http://localhost:8000
 ```
 
-**Windows (PowerShell)** — no Git Bash needed:
+**Windows (PowerShell)**, no Git Bash needed:
 
 ```powershell
 git clone https://github.com/Emmapoky/AverisHackathon.git
@@ -108,7 +108,7 @@ cd AverisHackathon
 ```
 
 > **"running scripts is disabled on this system"?** Windows blocks unsigned scripts by
-> default. Run this once in the same window, then try again — it only affects that window:
+> default. Run this once in the same window, then try again. It only affects that window:
 >
 > ```powershell
 > Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
@@ -159,11 +159,122 @@ Activate the environment by hand if you prefer: `source .venv/bin/activate`
 └── docs/              brief, rules, decisions, deploy guide, UI brief
 ```
 
-## 🗺️ Roadmap
-- Connect to the real mailbox (Microsoft Graph / Outlook add-in) instead of JSON files
-- Learn from reviewer corrections (new label synonyms, company aliases)
-- More languages and document types (packing list ↔ invoice cross-checks)
-- Role-based access and an audit export for compliance
+## 🏗️ Technical Architecture
+
+One FastAPI process serves both the JSON API and the dashboard. There is no
+separate frontend server and no build step, so the whole thing runs with one
+command and deploys as a single function.
+
+| Module | What it does |
+|---|---|
+| `src/app/config.py` | Loads `.env`, and treats a blank variable as unset |
+| `src/app/inbox.py` | Reads the organisers' email format from a folder |
+| `src/app/parsing.py` | Opens txt, PDF, Word and Excel, and works out what kind of document it is |
+| `src/app/fields.py` | Label synonyms in four languages, plus the normalisers for names, ports, counts and weights |
+| `src/app/classify.py` | Sorts an email into one of the five types |
+| `src/app/pipeline.py` | Runs the four steps in order and builds the result, including the step by step trace |
+| `src/app/llm.py` | Talks to DeepSeek and Gemini, with caching and rate limiting |
+| `src/app/store.py` | Saves human reviews to Supabase, or to a local file if Supabase is not set up |
+| `src/app/api.py` | The HTTP endpoints, and serves the dashboard files |
+| `api/index.py` | Entry point used by Vercel only |
+
+When the page loads, the browser calls `/api/config`, `/api/summary` and
+`/api/emails`. Results for the 520 sample emails are worked out ahead of time by
+`scripts/run_batch.py` and saved to `data/results.json`, so the dashboard is
+instant and costs nothing to browse. Only the "Check an email" tab processes
+something live.
+
+---
+
+## 🔧 Implementation Details
+
+**Sorting an email.** Keyword rules score each of the five types. A type wins
+only if its score is at least 2.0 and it beats the runner up by at least 1.0.
+If it does not, the email is marked as low confidence and passed to the AI, or
+to a person when no key is set. Every result records whether a rule or the model
+decided it.
+
+**Finding the seven fields.** Each field has a list of label synonyms in English,
+Malay, Indonesian and Chinese, so "Consignee", "Penerima" and "收货人" all map to
+the same field. Numbers must start with a digit, and rows containing the word
+"total" win, which stops a table column header being read as the value. Labels
+the rules do not recognise are sent to the AI, which returns the value together
+with the exact quote it came from.
+
+**Comparing.** Values are normalised first, then compared exactly. Company names
+lose punctuation and common suffixes, ports are resolved through an alias table,
+container strings like `2x40HC + 1x20GP` are added up, and weights are converted
+to kilograms from tonnes or pounds. Weights allow a 0.01% difference, because
+converting pounds does not land on a round number. That number was measured: the
+smallest real weight defect in the dataset is 0.233%, so the tolerance sits well
+below anything genuine.
+
+**Using the AI.** DeepSeek handles unclear emails and unfamiliar labels. Gemini
+reads scanned PDFs that contain no text at all. Replies are cached on disk and
+calls are rate limited, so reruns cost nothing extra. After the rules flag a
+mismatch, the AI reads both documents again as a second reviewer. That answer is
+shown to the user but never changes the result, and four tests check that the
+submitted output is identical whether it runs or not.
+
+**Storage.** Human reviews go to Supabase when its keys are set, and to a local
+JSON file otherwise. This matters on Vercel, where the filesystem is read only
+and anything written to disk disappears between requests.
+
+**Testing.** 100 tests in two suites. `tests/test_pipeline.py` covers the
+pipeline end to end, and `tests/test_stress.py` holds emails and documents
+written to break it, none of which appear in the organisers' data.
+
+---
+
+## 🧱 Challenges Faced
+
+**Every request for a draft BL looked like a check request.** Emails asking us
+to send a BL were being sorted as emails asking us to check one. We rewrote the
+scoring and added the phrasing customers actually use, like "revert with the
+draft BL once".
+
+**PDF tables gave us the wrong number.** The parser was picking up the column
+heading "GROSS WEIGHT (KG)" instead of the total row underneath it. Numeric
+fields now have to start with a digit, and rows mentioning "total" are preferred.
+
+**The same company written two ways looked like two companies.** `GLOBAL BOOKS
+L.L.C.` did not match `GLOBAL BOOKS LLC`. Dots are now stripped before the rest
+of the punctuation, and the same fix later covered `A.P. MOLLER MAERSK A/S`.
+
+**A weight of 55 200 KG was read as 55 kg.** A space used as a thousands
+separator, which is normal in European paperwork, broke the number parser by a
+factor of a thousand. Pounds were also being read as kilograms. Both would have
+sent a customer a correction for a document that was already right.
+
+**Comparing converted weights failed even when they matched.** Once pounds were
+converted properly, exact equality still reported a mismatch, because the
+conversion does not produce a round number. That is where the measured 0.01%
+tolerance came from.
+
+**Hugging Face stopped being free.** It was our hosting plan, and a deploy
+script was already written for it, but it began requiring a paid subscription to
+run a Space. We moved to Vercel, which meant adapting to a read only filesystem
+and to instances that are thrown away between requests.
+
+**Vercel created our environment variables empty.** It read the names from
+`.env.example` and left the values blank, so `float("")` crashed the app at
+import and every route returned an error with no explanation. Blank values are
+now treated as missing, and the deployment reports what is wrong instead of
+failing silently.
+
+---
+
+## 🗺️ Future Roadmap
+**Next**
+- Connect to the real mailbox through Microsoft Graph or an Outlook add in, instead of reading files
+- Learn from reviewer corrections, so a label or company alias only has to be fixed once
+- Show the reviewer queue as a shared worklist, with who is handling what
+
+**Later**
+- More document types, such as checking a packing list against an invoice
+- More languages, starting with the lanes already in the data: Spanish, Vietnamese and Thai
+- Role based access and an audit export, so compliance can see who approved what
+- A confidence score per field, so reviewers know which values to look at first
 
 ---
 _Dataset: synthetic data from the hackathon organisers, cleared for public repos._
